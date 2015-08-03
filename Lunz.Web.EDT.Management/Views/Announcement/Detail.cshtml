@@ -1,0 +1,37 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title">查看通知公告信息</h3>
+</div>
+<form name="detailForm" action="" class="horizontal-form">
+    <div class="modal-body">
+        <div class="form-body">
+            <div class="form-group">
+                <label class="control-label">标题</label>
+                {{Announcement.Topic}}
+            </div>
+            <div class="form-group">
+                <label class="control-label">类型</label>
+                {{Announcement.Basic_DataDictionary.Name}}
+            </div>
+            <div class="form-group">
+                <label class="control-label">开始时间</label>
+                {{Announcement.StartDate|date:"yyyy-MM-dd HH:mm"}}
+            </div>
+            <div class="form-group">
+                <label class="control-label">结束时间</label>
+                {{Announcement.EndDate|date:"yyyy-MM-dd HH:mm"}}
+            </div>
+            <div class="form-group">
+                <label class="control-label">内容</label>
+                <div class="form-fit" ng-bind-html="Announcement.Text"></div>
+            </div>
+            <div class="form-group">
+                <label class="control-label">附件</label>
+                <a href={{Announcement.Basic_ResourceItem.FullUrl}}>{{Announcement.Basic_ResourceItem.Filename}}</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button class="btn btn-warning" ng-click="cancel()">关闭</button>
+    </div>
+</form>

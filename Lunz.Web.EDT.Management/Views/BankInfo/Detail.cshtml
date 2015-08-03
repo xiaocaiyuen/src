@@ -1,0 +1,37 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title">查看银行信息</h3>
+</div>
+<form name="detailForm" action="" class="horizontal-form">
+    <div class="modal-body">
+        <div class="form-body">
+            <div class="form-group">
+                <label class="control-label">开户行全称</label>
+                {{BankInfo.Name}}
+            </div>
+            <div class="form-group">
+                <label class="control-label">银行类型</label>
+                {{BankInfo.Basic_DataDictionary.Name}}
+            </div>
+            <div class="form-group">
+                <label class="control-label">联系人</label>
+                {{BankInfo.ContactPerson}}
+            </div>
+            <div class="form-group">
+                <label class="control-label">联系电话</label>
+                {{BankInfo.Telephone}}
+            </div>
+            <div class="form-group">
+                <label class="control-label">邮编</label>
+                {{BankInfo.PostalCode}}
+            </div>
+            <div class="form-group">
+                <label class="control-label">地址</label>
+                {{BankInfo.Address}}
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button class="btn btn-warning" ng-click="cancel()">关闭</button>
+    </div>
+</form>

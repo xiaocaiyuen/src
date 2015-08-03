@@ -1,0 +1,85 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title">编辑数据字典</h3>
+</div>
+<form name="editForm" action="" class="horizontal-form">
+    <div class="modal-body">
+
+        <div class="form-body">
+            <div class="form-group"
+                 data-ng-class="{'has-error': editForm.Name.$dirty && editForm.Name.$error.required}">
+                <label class="control-label">名称 *</label>
+                <input type="text" name="Name" data-ng-model="DataDictionary.Name"
+                       required maxlength="50" class="form-control" placeholder="" />
+                <span class="help-block"
+                      data-ng-show="editForm.Name.$dirty && editForm.Name.$error.required">
+                    此字段为必填。
+                </span>
+            </div>
+            <div class="form-group"
+                 data-ng-class="{'has-error': editForm.Code.$dirty && editForm.Code.$error.required}">
+                <label class="control-label">标识 *</label>
+                <input type="text" name="Code" data-ng-model="DataDictionary.Code"
+                       required maxlength="50" class="form-control" placeholder="" />
+                <span class="help-block"
+                      data-ng-show="editForm.Code.$dirty && editForm.Code.$error.required">
+                    此字段为必填。
+                </span>
+            </div>
+            <div class="form-group"
+                 data-ng-class="{'has-error': editForm.StringValue.$dirty && editForm.StringValue.$error.required}">
+                <label class="control-label">字符型</label>
+                <input type="text" name="StringValue" data-ng-model="DataDictionary.StringValue"
+                       required maxlength="50" class="form-control" placeholder="" />
+                <span class="help-block"
+                      data-ng-show="editForm.StringValue.$dirty && editForm.StringValue.$error.required">
+                    此字段为必填。
+                </span>
+            </div>
+            <div class="form-group"
+                 data-ng-class="{'has-error': editForm.IntValue.$dirty && editForm.IntValue.$error.required}">
+                <label class="control-label">数字型</label>
+                <input type="number" name="IntValue" data-ng-model="DataDictionary.IntValue"
+                       required maxlength="50" min="0" class="form-control" placeholder="" />
+                <span class="help-block"
+                      data-ng-show="editForm.IntValue.$dirty && editForm.IntValue.$error.required">
+                    此字段为必填。
+                </span>
+            </div>
+            <div class="form-group"
+                 data-ng-class="{'has-error': editForm.FloatValue.$dirty && editForm.FloatValue.$error.required}">
+                <label class="control-label">浮点型</label>
+                <input type="number" name="FloatValue" data-ng-model="DataDictionary.FloatValue"
+                       required maxlength="50" class="form-control" placeholder="" />
+                <span class="help-block"
+                      data-ng-show="editForm.FloatValue.$dirty && editForm.FloatValue.$error.required">
+                    此字段为必填。
+                </span>
+            </div>
+            <div class="form-group"
+                 data-ng-class="{'has-error': editForm.DateTimeValue.$dirty && editForm.DateTimeValue.$error.required}">
+                <label class="control-label">日期型</label>
+
+                <input type="text" name="DateTimeValue" data-ng-model="DataDictionary.DateTimeValue"
+                       required maxlength="50" class="form-control" placeholder="" />
+                <span class="help-block"
+                      data-ng-show="editForm.DateTimeValue.$dirty && editForm.DateTimeValue.$error.required">
+                    此字段为必填。
+                </span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">布尔型</label>
+                <label class="radio-inline">
+                    <input type="radio" name="BoolValue" /> 是
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="BoolValue" /> 否
+                </label>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-disabled="editForm.$invalid" ng-click="save()">保存</button>
+        <button class="btn btn-warning" ng-click="cancel()">取消</button>
+    </div>
+</form>

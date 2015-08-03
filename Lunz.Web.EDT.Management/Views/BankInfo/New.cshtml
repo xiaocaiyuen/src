@@ -1,0 +1,59 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title">编辑银行信息</h3>
+</div>
+<form name="editForm" action="" class="horizontal-form">
+    <div class="modal-body">
+        <div class="form-body">
+            <div class="form-group"
+                 data-ng-class="{'has-error': editForm.Name.$dirty && editForm.Name.$error.required}">
+                <label class="control-label">开户行全称 *</label>
+                <input type="text" required name="Name" ng-model="BankInfo.Name" maxlength="50" class="form-control" />
+                <span class="help-block"
+                      data-ng-show="editForm.Name.$dirty && editForm.Name.$error.required">
+                    此字段为必填。
+                </span>
+            </div>
+            <div class="form-group" data-ng-class="{'has-error': editForm.TypeId.$dirty && editForm.TypeId.$error.required}">
+                <label class="control-label">银行类型 *</label>
+                <select required name="TypeId" class="form-control input-sm" ng-model="BankInfo.TypeId" ng-options="m.Id as m.Name for m in SelectType">
+                    <option value="">--请选择--</option>
+                </select>
+                <span class="help-block"
+                      data-ng-show="editForm.TypeId.$dirty && editForm.TypeId.$error.required">
+                    此字段为必填。
+                </span>
+            </div>
+            <div class="form-group"
+                 data-ng-class="{'has-error': editForm.ContactPerson.$dirty && editForm.ContactPerson.$error.required}">
+                <label class="control-label">联系人 *</label>
+                <input type="text" required name="ContactPerson" ng-model="BankInfo.ContactPerson" maxlength="50" class="form-control" />
+                <span class="help-block"
+                      data-ng-show="editForm.ContactPerson.$dirty && editForm.ContactPerson.$error.required">
+                    此字段为必填。
+                </span>
+            </div>
+            <div class="form-group"
+                 data-ng-class="{'has-error': editForm.Telephone.$dirty && editForm.Telephone.$invalid}">
+                <label class="control-label">联系电话 *</label>
+                <input type="text" required name="Telephone" ng-model="BankInfo.Telephone" ng-pattern="/^((0\d{2,3})-)?(\d{7,8})(-(\d{3,}))?$/" maxlength="100" class="form-control" />
+                <span class="help-block"
+                      data-ng-show="editForm.Telephone.$dirty && editForm.Telephone.$invalid">
+                    此字段为必填或格式不对。
+                </span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">邮编</label>
+                <input type="text" name="PostalCode" ng-model="BankInfo.PostalCode" maxlength="20" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">地址</label>
+                <input type="text" name="Address" ng-model="BankInfo.Address" maxlength="100" class="form-control" />
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-disabled="editForm.$invalid" ng-click="save()">保存</button>
+        <button class="btn btn-warning" ng-click="cancel()">取消</button>
+    </div>
+</form>

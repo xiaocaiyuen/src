@@ -1,0 +1,65 @@
+﻿<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+<meta content="" name="description" />
+<meta content="" name="author" />
+
+<title data-ng-bind="$state.current.data.pageTitle + ' - 轮子科技'"></title>
+
+<!-- BEGIN GLOBAL MANDATORY STYLES -->
+@*<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />*@
+<link href="~/content/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="~/content/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+<link href="~/content/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="~/content/assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css" />
+<link href="~/content/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+<link href="~/content/assets/global/plugins/bootstrap-toastr/toastr.min.css" rel="stylesheet" type="text/css" />
+<link href="~/content/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/assets/global/plugins/angularjs/plugins/tree/angular-ui-tree.min.css" rel="stylesheet" />
+<link href="~/Content/assets/global/plugins/angularjs/plugins/tree/demo.css" rel="stylesheet" />
+<link href="~/Content/assets/global/plugins/summernote/summernote.css" rel="stylesheet" />
+<!-- END GLOBAL MANDATORY STYLES -->
+<!-- BEGIN DYMANICLY LOADED CSS FILES(all plugin and page related styles must be loaded between GLOBAL and THEME css files ) -->
+<link id="ng_load_plugins_before" />
+<!-- END DYMANICLY LOADED CSS FILES -->
+<!-- BEGIN THEME STYLES -->
+<!-- DOC: To use 'rounded corners' style just load 'components-rounded.css' stylesheet instead of 'components.css' in the below style tag -->
+@*<link href="~/content/assets/global/plugins/angularjs/plugins/ui-grid/ui-grid-unstable.css" rel="stylesheet" type="text/css" />*@
+<link href="~/content/assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css" />
+<link href="~/content/assets/global/css/plugins.css" rel="stylesheet" type="text/css" />
+<link href="~/content/assets/admin/layout/css/layout.css" rel="stylesheet" type="text/css" />
+<link href="~/content/assets/admin/layout/css/themes/darkblue.css" rel="stylesheet" type="text/css" id="style_color" />
+<link href="~/content/assets/admin/layout/css/custom.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
+<!-- END THEME STYLES -->
+<!-- BEGIN CUSTOM STYLES -->
+<link href="~/content/css/custom.css" rel="stylesheet" type="text/css" />
+<!-- END CUSTOM STYLES -->
+
+<link rel="shortcut icon" href="favicon.ico" />
+<script language="javascript" type="text/javascript">
+function preview()
+{
+bdhtml=window.document.body.innerHTML;
+sprnstr="<!--startprint-->";
+eprnstr="<!--endprint-->";
+prnhtml=bdhtml.substr(bdhtml.indexOf(sprnstr)+17);
+prnhtml = prnhtml.substring(0, prnhtml.indexOf(eprnstr));
+//window.document.body.innerHTML = prnhtml;
+//window.print();
+window.document.body.innerHTML = "<body>" + prnhtml + "</body>";
+window.print();
+//window.document.body.innerHTML = bdhtml;
+window.location.reload();
+
+}
+</script>
+<style media="print">
+    .Noprint {
+        DISPLAY: none;
+    }
+
+    .PageNext {
+        PAGE-BREAK-AFTER: always;
+    }
+</style>

@@ -1,0 +1,95 @@
+﻿<script type="text/javascript">
+    var apiBaseUrl = '@System.Configuration.ConfigurationManager.AppSettings["ApiBaseUrl"]';
+    var appKey = '@System.Configuration.ConfigurationManager.AppSettings["AppKey"]';
+</script>
+<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+<!-- BEGIN CORE JQUERY PLUGINS -->
+<!--[if lt IE 9]>
+    <script src="/content/assets/global/plugins/respond.min.js"></script>
+    <script src="/content/assets/global/plugins/excanvas.min.js"></script>
+<![endif]-->
+<script src="~/content/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+<script src="~/content/assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+<script src="~/content/assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="~/content/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+<script src="~/content/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="~/content/assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="~/content/assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+<script src="~/content/assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+<script src="~/content/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+<script src="~/content/assets/global/plugins/bootstrap-toastr/toastr.min.js"></script>
+<script src="~/content/assets/global/plugins/bootbox/bootbox.min.js" type="text/javascript"></script>
+<script src="~/content/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js" type="text/javascript"></script>
+<script src="~/content/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js" type="text/javascript"></script>
+<script src="~/Content/assets/global/plugins/summernote/summernote.min.js"></script>
+<script src="~/Content/assets/global/scripts/jquery-ui.min.js"></script>
+@*<script src="~/Scripts/jquery.form.js" type="text/javascript"></script>*@
+<!-- END CORE JQUERY PLUGINS -->
+<!-- BEGIN CORE ANGULARJS PLUGINS -->
+<script src="~/content/assets/global/plugins/angularjs/angular.min.js" type="text/javascript"></script>
+<script src="~/Content/assets/global/plugins/angularjs/plugins/angular-file-upload/angular-file-upload-shim.js" type="text/javascript"></script>
+<script src="~/Content/assets/global/plugins/angularjs/plugins/angular-file-upload/angular-file-upload.js" type="text/javascript"></script>
+<script src="~/content/assets/global/plugins/angularjs/angular-sanitize.min.js" type="text/javascript"></script>
+<script src="~/content/assets/global/plugins/angularjs/angular-touch.min.js" type="text/javascript"></script>
+<script src="~/content/assets/global/plugins/angularjs/plugins/angular-ui-router.min.js" type="text/javascript"></script>
+<script src="~/content/assets/global/plugins/angularjs/plugins/ocLazyLoad.min.js" type="text/javascript"></script>
+<script src="~/content/assets/global/plugins/angularjs/plugins/ui-bootstrap-tpls.min.js" type="text/javascript"></script>
+<script src="~/Content/assets/global/plugins/angularjs/plugins/tree/angular-ui-tree.js"></script>
+<script src="~/Content/assets/global/plugins/angularjs/plugins/rating.js"></script>
+<script src="~/Content/assets/global/plugins/angularjs/angular-cookies.min.js"></script>
+<script src="~/Content/assets/global/plugins/summernote/angular-summernote.js"></script>
+<script src="~/Content/assets/global/plugins/angularjs/plugins/draganddrop.js"></script>
+<script src="~/Scripts/bootstrap-datepicker.min.js"></script>
+<script src="~/Scripts/bootstrap-datepicker.zh-CN.min.js"></script>
+@*<script src="~/content/assets/global/plugins/angularjs/plugins/ui-grid/ui-grid-unstable.js" type="text/javascript"></script>*@
+<!-- END CORE ANGULARJS PLUGINS -->
+<!-- BEGIN API SCRIPTS -->
+<script src="@System.Configuration.ConfigurationManager.AppSettings["ApiBaseUrl"]/sdk/api.js" type="text/javascript"></script>
+<script src="@System.Configuration.ConfigurationManager.AppSettings["ApiBaseUrl"]/sdk/basic_api.js" type="text/javascript"></script>
+<script src="@System.Configuration.ConfigurationManager.AppSettings["ApiBaseUrl"]/sdk/settings_api.js" type="text/javascript"></script>
+<script src="@System.Configuration.ConfigurationManager.AppSettings["ApiBaseUrl"]/companyApply_api.js" type="text/javascript"></script>
+<script src="@System.Configuration.ConfigurationManager.AppSettings["ApiBaseUrl"]/personal_api.js" type="text/javascript"></script>
+<script src="@System.Configuration.ConfigurationManager.AppSettings["ApiBaseUrl"]/sdk/products_api.js" type="text/javascript"></script>
+<script src="@System.Configuration.ConfigurationManager.AppSettings["ApiBaseUrl"]/sdk/business_api.js" type="text/javascript"></script>
+@*<script src="@System.Configuration.ConfigurationManager.AppSettings["ApiBaseUrl"]directives/directives.js" type="text/javascript"></script>
+<script src="@System.Configuration.ConfigurationManager.AppSettings["ApiBaseUrl"]angularjs/filters.js" type="text/javascript"></script>*@
+<!-- END API SCRIPTS -->
+<!-- BEGIN APP LEVEL ANGULARJS SCRIPTS -->
+<script src="~/content/js/ngNotify.js" type="text/javascript"></script>
+<script src="~/content/js/ngDataTable.js" type="text/javascript"></script>
+<script src="~/content/js/ngDataTables.js" type="text/javascript"></script>
+<script src="~/content/js/app.js" type="text/javascript"></script>
+<script src="~/content/js/directives.js" type="text/javascript" charset="GBK"></script>
+<!-- END APP LEVEL ANGULARJS SCRIPTS -->
+<!-- BEGIN ROUTE SCRIPTS -->
+<script src="~/content/js/route/common.js" type="text/javascript"></script>
+<script src="~/content/js/route/company/apply.js" type="text/javascript"></script>
+<script src="~/content/js/route/personal/personal.js" type="text/javascript"></script>
+<script src="~/content/js/route/settings/datadictionary.js" type="text/javascript"></script>
+<script src="~/content/js/route/settings/logs.js" type="text/javascript"></script>
+<script src="~/Content/js/route/productdefinition/productdefinition.js" type="text/javascript"></script>
+<script src="~/Content/js/route/productcontract/productcontract.js" type="text/javascript"></script>
+<script src="~/Content/js/route/productcontractprint/productcontractprint.js" type="text/javascript"></script>
+<script src="~/content/js/route/settings/announcement.js" type="text/javascript"></script>
+<script src="~/content/js/route/settings/bankinfo.js" type="text/javascript"></script>
+<script src="~/content/js/route/settings/companyinfo.js" type="text/javascript"></script>
+<script src="~/content/js/route/business/apply.js" type="text/javascript"></script>
+<!-- END ROUTE SCRIPTS -->
+<!-- BEGIN PROJECT SCRIPTS -->
+<script src="~/content/js/controllers/navigation/sidebar.js" type="text/javascript"></script>
+<!-- END PROJECT SCRIPTS -->
+<!-- BEGIN APP LEVEL JQUERY SCRIPTS -->
+<script src="~/content/assets/global/scripts/metronic.js" type="text/javascript"></script>
+<script src="~/content/assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
+<script src="~/content/assets/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
+<script src="~/content/assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
+<!-- END APP LEVEL JQUERY SCRIPTS -->
+
+<script type="text/javascript">
+    /* Init Metronic's core jquery plugins and layout scripts */
+    $(document).ready(function () {
+        Metronic.init(); // Run metronic theme
+        Metronic.setAssetsPath('/content/assets/'); // Set the assets folder path
+    });
+</script>
+<!-- END JAVASCRIPTS -->

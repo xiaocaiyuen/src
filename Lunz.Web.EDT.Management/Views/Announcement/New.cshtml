@@ -1,0 +1,70 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title">编辑通知公告信息</h3>
+</div>
+<form name="editForm" action="" class="horizontal-form">
+    <div class="modal-body">
+        <div class="form-body">
+            <div class="form-group"
+                 data-ng-class="{'has-error': editForm.Topic.$dirty && editForm.Topic.$error.required}">
+                <label class="control-label">标题 *</label>
+                <input type="text" required name="Topic" ng-model="Announcement.Topic" maxlength="100" class="form-control" />
+                <span class="help-block"
+                      data-ng-show="editForm.Topic.$dirty && editForm.Topic.$error.required">
+                    此字段为必填。
+                </span>
+            </div>
+            <div class="form-group" data-ng-class="{'has-error': editForm.TypeId.$dirty && editForm.TypeId.$error.required}">
+                <label class="control-label">类型 *</label>
+                <select required name="TypeId" class="form-control input-sm" ng-model="Announcement.TypeId" ng-options="m.Id as m.Name for m in SelectType">
+                    <option value="">--请选择--</option>
+                </select>
+                <span class="help-block"
+                      data-ng-show="editForm.TypeId.$dirty && editForm.TypeId.$error.required">
+                    此字段为必填。
+                </span>
+            </div>
+            <div class="form-group"
+                 data-ng-class="{'has-error': editForm.StartDate.$dirty && editForm.StartDate.$error.required}">
+                <label class="control-label">开始时间 *</label>
+                <input required type="text" name="StartDate" data-ng-model="Announcement.StartDate" class="datepicker" />
+                <span class="help-block"
+                      data-ng-show="editForm.StartDate.$dirty && editForm.StartDate.$error.required">
+                    此字段为必填。
+                </span>
+            </div>
+            <div class="form-group" data-ng-class="{'has-error': editForm.EndDate.$dirty && editForm.EndDate.$error.required}">
+                <label class="control-label">结束时间 *</label>
+                <input required type="text" name="EndDate" ng-model="Announcement.EndDate" />
+                <span class="help-block"
+                      data-ng-show="editForm.EndDate.$dirty && editForm.EndDate.$error.required">
+                    此字段为必填。
+                </span>
+            </div>
+            <div class="form-group" data-ng-class="{'has-error': editForm.Text.$dirty && editForm.Text.$error.required}">
+                <label class="control-label">内容 *</label>
+                <summernote required editable="editable" name="Text" height="100" ng-model="Announcement.Text"></summernote>
+                <span class="help-block"
+                      data-ng-show="editForm.Text.$dirty && editForm.Text.$error.required">
+                    此字段为必填。
+                </span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">附件 </label>
+                <input ng-file-select="" ng-model="files" multiple="" accept="*/*" type="file" name="files[]">
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-disabled="editForm.$invalid" ng-click="save()">保存</button>
+        <button class="btn btn-warning" ng-click="cancel()">取消</button>
+    </div>
+</form>
+<script>
+    $(document).ready(function () {
+        $('.datepicker').datepicker({
+            format: "yyyy-mm-dd",
+            language: 'zh-CN'
+        });
+    })
+</script>

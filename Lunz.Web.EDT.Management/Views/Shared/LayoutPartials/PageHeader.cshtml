@@ -1,0 +1,20 @@
+﻿<h3 class="page-title" data-page-title>
+    标题
+</h3>
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <i class="fa fa-home"></i>
+            <a href="#/dashboard">起始页</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <div page-breadcrumb ng-model="CurrentPage"></div>
+    </ul>
+
+    @{
+        var action = ViewContext.RouteData.Values["action"];
+        var toolbarViewName = string.Format("Toolbars/{0}", action);
+        Html.RenderPartial(toolbarViewName);
+    }
+
+</div>

@@ -1,0 +1,349 @@
+﻿@{Html.RenderPartial("LayoutPartials/PageHeader");}
+
+<div class="portlet light bordered">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="icon-equalizer font-red-sunglo"></i>
+            <span class="caption-subject font-red-sunglo bold uppercase">产品信息</span>
+        </div>
+    </div>
+    <div class="portlet-body form">
+        <form name="editForm" action="" class="form-horizontal">
+            <div class="form-body">
+                <div class="form-group"
+                     data-ng-class="{'has-error': editForm.Name.$dirty && editForm.Name.$error.required}">
+                    <label class="col-md-1 control-label">产品名称 *</label>
+                    <div class="col-md-4">
+                        <input type="text" name="Name" ng-model="entity.Name"
+                               required maxlength="255" class="form-control" placeholder="" />
+                        <span class="help-block"
+                              data-ng-show="editForm.Name.$dirty && editForm.Name.$error.required">
+                            此字段为必填。
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group"
+                     data-ng-class="{'has-error': editForm.ProductTypeCode.$dirty && editForm.ProductTypeCode.$error.required}">
+                    <label class="col-md-1 control-label">产品类型 </label>
+                    <div class="col-md-4">
+                        <select required name="ProductTypeCode" class="form-control" ng-model="entity.ProductTypeCode" ng-options="m.Code as m.Name for m in SelectProductType">
+                            <option value="">--请选择--</option>
+                        </select>
+                        <span class="help-block"
+                              data-ng-show="editForm.ProductTypeCode.$dirty && editForm.ProductTypeCode.$error.required">
+                            此字段为必填。
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     data-ng-class="{'has-error': editForm.VehicleTypeCode.$dirty && editForm.VehicleTypeCode.$error.required}">
+                    <label class="col-md-1 control-label">车辆类别 </label>
+                    <div class="col-md-4">
+                        <select required name="VehicleTypeCode" class="form-control" ng-model="entity.VehicleTypeCode" ng-options="m.Code as m.Name for m in SelectVehicleType">
+                            <option value="">--请选择--</option>
+                        </select>
+                        <span class="help-block"
+                              data-ng-show="editForm.VehicleTypeCode.$dirty && editForm.VehicleTypeCode.$error.required">
+                            此字段为必填。
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group"
+                     data-ng-class="{'has-error': editForm.DownPayment.$dirty && editForm.DownPayment.$error.required}">
+                    <label class="col-md-1 control-label">手续费比例 </label>
+                    <div class="col-md-1">
+                        <input type="number" name="DownPayment" data-ng-model="entity.DownPayment"
+                               required maxlength="10" min="0" class="form-control" placeholder="" />
+                    </div>
+                    <div class="col-md-2">
+                        <label class="control-label">比例范围 </label>
+                        <input type="number" name="DownPaymentStart" data-ng-model="entity.DownPaymentStart" style="width:22%;height:34px;border: 1px solid #E5E5E5" min="0">%-
+                        <input type="number" name="DownPaymentEnd" data-ng-model="entity.DownPaymentEnd" style="width:22%;height:34px;border: 1px solid #E5E5E5" min="0">%
+                    </div>
+
+                    <label class="col-md-1 control-label">计入方式 </label>
+                    <div class="col-md-2">
+                        <select required name="DownPaymentSumTypeCode" class="form-control" ng-model="entity.DownPaymentSumTypeCode" ng-options="m.Code as m.Name for m in SelectPaymentSumType">
+                            <option value="">--请选择--</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2" data-ng-class="{'has-error': editForm.DownPaymentEditable.$dirty && editForm.DownPaymentEditable.$error.required}">
+                        <div class="checkbox" style="padding-top:9px">
+                            <label>
+                                <span class=""><input type="checkbox" name="DownPaymentEditable" data-ng-model="entity.DownPaymentEditable" value="1"></span> 申请时可修改
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-2" style="text-align:left">
+                        <select class="form-control">
+                            <option>客户小计</option>
+                            <option>车价款</option>
+                        </select>
+                    </div>
+
+                </div>
+                 <div class="form-group"
+                         data-ng-class="{'has-error': editForm.Name.$dirty && editForm.Name.$error.required}">
+                        <label class="col-md-1 control-label">首付比例 </label>
+                        <div class="col-md-1">
+                            <input type="number" name="Fee" data-ng-model="ProductDefinition.Fee"
+                                   required maxlength="10" min="0" class="form-control" placeholder="" />
+                        </div>
+                        <div class="col-md-2">
+                            <label class="control-label">比例范围 </label>
+                            <input type="number" style="width:22%;height:34px;border: 1px solid #E5E5E5" min="0">%-
+                            <input type="number" style="width:22%;height:34px;border: 1px solid #E5E5E5" min="0">%
+                        </div>
+                        <div class="col-md-2">
+                            <div class="checkbox" style="padding-top:9px">
+                                <label>
+                                    <span class=""><input type="checkbox"></span> 申请时可修改
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-2" style="text-align:left">
+                            <select class="form-control">
+                                <option>客户小计</option>
+                                <option>车价款</option>
+                            </select>
+                        </div>
+                    </div>
+                @*    <div class="form-group"
+         data-ng-class="{'has-error': editForm.Name.$dirty && editForm.Name.$error.required}">
+        <label class="col-md-1 control-label">保证金比例 </label>
+        <div class="col-md-1">
+            <input type="number" name="Fee" data-ng-model="ProductDefinition.Fee"
+                   required maxlength="10" min="0" class="form-control" placeholder="" />
+        </div>
+        <div class="col-md-2">
+            <label class="control-label">比例范围 </label>
+            <input type="number" style="width:22%;height:34px;border: 1px solid #E5E5E5" min="0">%-
+            <input type="number" style="width:22%;height:34px;border: 1px solid #E5E5E5" min="0">%
+        </div>
+        <div class="col-md-2">
+            <div class="checkbox" style="padding-top:9px">
+                <label>
+                    <span class=""><input type="checkbox"></span> 申请时可修改
+                </label>
+            </div>
+        </div>
+        <div class="col-md-2" style="text-align:left">
+            <select class="form-control">
+                <option>客户小计</option>
+                <option>车价款</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group"
+         data-ng-class="{'has-error': editForm.Name.$dirty && editForm.Name.$error.required}">
+        <label class="col-md-1 control-label">尾款比例 </label>
+        <div class="col-md-1">
+            <input type="number" name="Fee" data-ng-model="ProductDefinition.Fee"
+                   required maxlength="10" min="0" class="form-control" placeholder="" />
+        </div>
+        <div class="col-md-2">
+            <label class="control-label">比例范围 </label>
+            <input type="number" style="width:22%;height:34px;border: 1px solid #E5E5E5" min="0">%-
+            <input type="number" style="width:22%;height:34px;border: 1px solid #E5E5E5" min="0">%
+        </div>
+        <div class="col-md-2">
+            <div class="checkbox" style="padding-top:9px">
+                <label>
+                    <span class=""><input type="checkbox"></span> 申请时可修改
+                </label>
+            </div>
+        </div>
+        <div class="col-md-2" style="text-align:left">
+            <select class="form-control">
+                <option>客户小计</option>
+                <option>车价款</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group"
+         data-ng-class="{'has-error': editForm.Name.$dirty && editForm.Name.$error.required}">
+        <label class="col-md-1 control-label">利率比例 </label>
+        <div class="col-md-1">
+            <input type="number" name="Fee" data-ng-model="ProductDefinition.Fee"
+                   required maxlength="10" min="0" class="form-control" placeholder="" />
+        </div>
+        <div class="col-md-2">
+            <label class="control-label">比例范围 </label>
+            <input type="number" style="width:22%;height:34px;border: 1px solid #E5E5E5" min="0">%-
+            <input type="number" style="width:22%;height:34px;border: 1px solid #E5E5E5" min="0">%
+        </div>
+        <div class="col-md-2">
+            <div class="checkbox" style="padding-top:9px">
+                <label>
+                    <span class=""><input type="checkbox"></span> 申请时可修改
+                </label>
+            </div>
+        </div>
+
+    </div>
+    <div class="form-group"
+         data-ng-class="{'has-error': editForm.Name.$dirty && editForm.Name.$error.required}">
+        <label class="col-md-1 control-label">默认租期 </label>
+        <div class="col-md-1">
+            <input type="number" name="Fee" data-ng-model="ProductDefinition.Fee"
+                   required maxlength="10" min="0" class="form-control" placeholder="" />
+        </div>
+        <div class="col-md-3">
+            <label class="control-label">比例范围 </label>
+            <input type="number" style="width:22%;height:34px;border: 1px solid #E5E5E5" min="0">-
+            <input type="number" style="width:22%;height:34px;border: 1px solid #E5E5E5" min="0">如：12-36期
+        </div>
+        <div class="col-md-2">
+            <div class="checkbox" style="padding-top:9px">
+                <label>
+                    <span class=""><input type="checkbox"></span> 申请时可修改
+                </label>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="form-group"
+         data-ng-class="{'has-error': editForm.Name.$dirty && editForm.Name.$error.required}">
+        <label class="col-md-1 control-label">放款方式 </label>
+        <div class="col-md-4">
+            <select class="form-control">
+                <option>先抵押后放款</option>
+                <option>先放款后抵押</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group"
+         data-ng-class="{'has-error': editForm.Name.$dirty && editForm.Name.$error.required}">
+        <label class="col-md-1 control-label">保证金处理 </label>
+        <div class="col-md-4">
+            <select class="form-control">
+                <option>期末退回</option>
+                <option>无</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group"
+         data-ng-class="{'has-error': editForm.Name.$dirty && editForm.Name.$error.required}">
+        <label class="col-md-1 control-label">GPS加装</label>
+        <div class="col-md-4">
+            <select class="form-control">
+                <option>记入融资额</option>
+                <option>记入首付款</option>
+                <option>否</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group"
+         data-ng-class="{'has-error': editForm.Name.$dirty && editForm.Name.$error.required}">
+        <label class="col-md-1 control-label">购置税</label>
+        <div class="col-md-4">
+            <select class="form-control">
+                <option>计入融资额</option>
+                <option>计入首付款</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group"
+         data-ng-class="{'has-error': editForm.Name.$dirty && editForm.Name.$error.required}">
+        <label class="col-md-1 control-label">保险</label>
+        <div class="col-md-4">
+            <select class="form-control">
+                <option>计入融资额</option>
+                <option>计入首付款</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group"
+         data-ng-class="{'has-error': editForm.Title.$dirty && editForm.Title.$error.required}">
+        <label class="col-md-1 control-label">结束期限 </label>
+        <div class="col-md-4">
+            <input type="text" class="datepicker" name="Founded" data-ng-model="EventInfo.Title" />
+        </div>
+    </div>
+
+    <div class="form-group"
+         data-ng-class="{'has-error': editForm.Name.$dirty && editForm.Name.$error.required}">
+        <label class="col-md-1 control-label">融资额 </label>
+        <div class="col-md-3">
+            <label class="control-label">区间 </label>
+            <input type="number" style="width:22%;height:34px;border: 1px solid #E5E5E5" min="0">-
+            <input type="number" style="width:22%;height:34px;border: 1px solid #E5E5E5" min="0">如：30000-80000
+        </div>
+        <div class="col-md-2" style="text-align:left">
+            <select class="form-control">
+                <option>客户小计</option>
+                <option>车价款</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group"
+         data-ng-class="{'has-error': editForm.Name.$dirty && editForm.Name.$error.required}">
+        <label class="col-md-1 control-label">计算方式</label>
+        <div class="col-md-4">
+            <select class="form-control">
+                <option>等额本金</option>
+                <option>等额本息</option>
+            </select>
+        </div>
+    </div>*@
+            </div>
+            @*<div class="form-actions">
+                    <div class="form-group"
+                         data-ng-class="{'has-error': editForm.Name.$dirty && editForm.Name.$error.required}">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="col-md-1 control-label" style="font-weight:bold">GPS使用费</label>
+                                <div class="col-md-2">
+                                    <div class="checkbox" style="padding-top:9px">
+                                        <label>
+                                            <span class=""><input type="checkbox"></span> 申请时可修改
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-1 control-label">年份 </label>
+                                <div class="col-md-2">
+                                    <input type="text" name="Fee" data-ng-model="ProductDefinition.Fee"
+                                           required maxlength="10" min="0" class="form-control" placeholder="" />
+                                </div>
+
+                                <label class="col-md-1 control-label">价格 </label>
+                                <div class="col-md-2">
+                                    <input type="number" name="Fee" data-ng-model="ProductDefinition.Fee"
+                                           required maxlength="10" min="0" class="form-control" placeholder="" />
+                                </div>
+
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-offset-1 col-md-10">
+                                    <button class="btn btn-primary" ng-click="">增加一条</button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>*@
+            <div class="form-actions">
+                <div class="row">
+
+                    <div class="col-md-offset-2 col-md-10">
+                        <button class="btn btn-primary" ng-disabled="editForm.$invalid" ng-click="save()">保存</button>
+                        <button type="button" class="btn btn-warning" ng-click="cancel()">取消</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    $('.datepicker').datepicker({
+        format: "yyyy-mm-dd",
+        language: 'zh-CN'
+    });
+</script>

@@ -1,0 +1,194 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title">公司信息查看</h3>
+</div>
+<form name="editForm" action="" class="horizontal-form">
+    <div class="modal-body">
+        <div class="form-body">
+            <div class="portlet box green ">
+                <div class="portlet-title">
+                    <div class="caption">
+                        公司基本信息
+                    </div>
+                    <div class="tools">
+                        <a href="" class="collapse">
+                        </a>
+                    </div>
+                </div>
+                <div class="portlet-body form">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="control-label">中文名称 :</label>
+                            <label class="control-label">{{CompanyInfo.Name}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">英文名称 :</label>
+                            <label class="control-label">{{CompanyInfo.NameEN}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">简称 :</label>
+                            <label class="control-label">{{CompanyInfo.Abbreviation}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">职工人数 :</label>
+                            <label class="control-label">{{CompanyInfo.Number}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">公司类型 :</label>
+                            <label class="control-label">{{CompanyInfo.Basic_DataDictionary.Name}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">营业执照注册码 :</label>
+                            <label class="control-label">{{CompanyInfo.BusinessLicense}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">营业期限 :</label>
+                            <label class="control-label">{{CompanyInfo.BusinessTerm}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">税务登记号 :</label>
+                            <label class="control-label">{{CompanyInfo.TaxRegistrationNo}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">成立日期 :</label>
+                            <label class="control-label">{{CompanyInfo.Founded}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">注册资本 :</label>
+                            <label class="control-label">{{CompanyInfo.RegistrationCapital}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">经营范围 :</label>
+                            <label class="control-label">{{CompanyInfo.BusinessScope}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">公司电话 :</label>
+                            <label class="control-label">{{CompanyInfo.Telephone}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">公司地址 :</label>
+                            <label class="control-label">{{CompanyInfo.Address}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">公司传真 :</label>
+                            <label class="control-label">{{CompanyInfo.Fax}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">邮政编码 :</label>
+                            <label class="control-label">{{CompanyInfo.PostalCode}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">组织机构代码 :</label>
+                            <label class="control-label">{{CompanyInfo.OrganizationCode}}</label>
+                        </div>
+                        <div class="form-group"
+                             data-ng-class="{'has-error': editForm.RegisteredAddress.$dirty && editForm.RegisteredAddress.$error.required}">
+                            <label class="control-label">公司注册地址 :</label>
+                            <label class="control-label">{{CompanyInfo.RegisteredAddress}}</label>
+                        </div>
+                        <div class="form-group"
+                             data-ng-class="{'has-error': editForm.CompanyEmail.$dirty && editForm.CompanyEmail.$error.required}">
+                            <label class="control-label">企业邮箱 :</label>
+                            <label class="control-label">{{CompanyInfo.CompanyEmail}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">备注</label>
+                            <label class="control-label">{{CompanyInfo.Remarks}}</label>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="portlet box green ">
+                <div class="portlet-title">
+                    <div class="caption">
+                        法人代表
+                    </div>
+                    <div class="tools">
+                        <a href="" class="collapse">
+                        </a>
+                    </div>
+                </div>
+                <div class="portlet-body form">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="control-label">姓名 :</label>
+                            <label class="control-label">{{CompanyInfo.LegalName}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">身份证 :</label>
+                            <label class="control-label">{{CompanyInfo.LegalIDCard}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">办公电话 :</label>
+                            <label class="control-label">{{CompanyInfo.LegalTel}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">邮政编码 :</label>
+                            <label class="control-label">{{CompanyInfo.LegalPostalCode}}</label>
+                        </div>
+                        <div class="form-group"
+                             data-ng-class="{'has-error': editForm.LegalAddress.$dirty && editForm.LegalAddress.$error.required}">
+                            <label class="control-label">常驻地 :</label>
+                            <label class="control-label">{{CompanyInfo.LegalAddress}}</label>
+                        </div>
+                        <div class="form-group"
+                             data-ng-class="{'has-error': editForm.LegalPhone.$dirty && editForm.LegalPhone.$error.required}">
+                            <label class="control-label">手机号码 :</label>
+                            <label class="control-label">{{CompanyInfo.LegalPhone}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">邮箱 :</label>
+                            <label class="control-label">{{CompanyInfo.LegaiEmail}}</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="portlet box green ">
+                <div class="portlet-title">
+                    <div class="caption">
+                        联系人
+                    </div>
+                    <div class="tools">
+                        <a href="" class="collapse">
+                        </a>
+                    </div>
+                </div>
+                <div class="portlet-body form">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="control-label">姓名 :</label>
+                            <label class="control-label">{{CompanyInfo.ContactName}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">身份证 :</label>
+                            <label class="control-label">{{CompanyInfo.ContactIDCard}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">办公电话 :</label>
+                            <label class="control-label">{{CompanyInfo.ContactTel}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">邮政编码 :</label>
+                            <label class="control-label">{{CompanyInfo.ContactPostalCode}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">常驻地 :</label>
+                            <label class="control-label">{{CompanyInfo.ContactAddress}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">手机号码 :</label>
+                            <label class="control-label">{{CompanyInfo.ContactPhone}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">邮箱 :</label>
+                            <label class="control-label">{{CompanyInfo.ContactEmail}}</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-warning" ng-click="cancel()">关闭</button>
+    </div>
+</form>

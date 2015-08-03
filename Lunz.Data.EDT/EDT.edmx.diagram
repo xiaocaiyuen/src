@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0d9100cbeade48afb2069cf4539c309b" Name="Diagram1">
+        <EntityTypeShape EntityType="Models.Api_Application" Width="1.5" PointX="0.75" PointY="8.875" />
+        <EntityTypeShape EntityType="Models.Api_ApplicationKey" Width="1.5" PointX="3" PointY="9.25" />
+        <EntityTypeShape EntityType="Models.Api_ApplicationLog" Width="1.5" PointX="5.25" PointY="11.875" />
+        <EntityTypeShape EntityType="Models.Basic_ResourceItem" Width="1.5" PointX="7.75" PointY="6.75" />
+        <EntityTypeShape EntityType="Models.Membership_AuthToken" Width="1.5" PointX="5.25" PointY="3.125" />
+        <EntityTypeShape EntityType="Models.Membership_MenuItem" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Models.Membership_User" Width="1.5" PointX="3" PointY="2.375" />
+        <EntityTypeShape EntityType="Models.Membership_UserResetPassword" Width="1.5" PointX="5.25" PointY="7.625" />
+        <EntityTypeShape EntityType="Models.Membership_VIPLevel" Width="1.5" PointX="0.75" PointY="3.375" />
+        <AssociationConnector Association="Models.FK_Api_ApplicationKey_Api_Application" />
+        <AssociationConnector Association="Models.FK_Api_ApplicationLog_Api_Application" />
+        <AssociationConnector Association="Models.FK_Api_ApplicationLog_Api_ApplicationKey" />
+        <AssociationConnector Association="Models.FK_Membership_AuthToken_Api_ApplicationKey" />
+        <AssociationConnector Association="Models.FK_Membership_AuthToken_Membership_User" />
+        <AssociationConnector Association="Models.FK_Membership_MenuItem_Membership_MenuItem" />
+        <AssociationConnector Association="Models.FK_Membership_User_Membership_VIPLevel" />
+        <AssociationConnector Association="Models.FK_Membership_UserResetPassword_Membership_User" />
+        <EntityTypeShape EntityType="Models.Basic_Logs" Width="1.5" PointX="12.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Models.Object_AttributeFiled" Width="1.5" PointX="14.625" PointY="4" />
+        <EntityTypeShape EntityType="Models.Object_AttributeValue" Width="1.5" PointX="16.875" PointY="4" />
+        <AssociationConnector Association="Models.FK_Object_AttributeValue_Object_AttributeFiled" />
+        <EntityTypeShape EntityType="Models.Object_AttributeArea" Width="1.5" PointX="10.5" PointY="12.5" />
+        <EntityTypeShape EntityType="Models.Product_ProductContract" Width="1.5" PointX="0.75" PointY="13.75" />
+        <EntityTypeShape EntityType="Models.Object_AttributeCategory" Width="1.5" PointX="12.75" PointY="14.375" />
+        <AssociationConnector Association="Models.FK_Object_AttributeCategory_Object_AttributeArea" />
+        <AssociationConnector Association="Models.FK_Object_AttributeFiled_Object_AttributeCategory" />
+        <EntityTypeShape EntityType="Models.Basic_Announcement" Width="1.5" PointX="10.25" PointY="7" />
+        <AssociationConnector Association="Models.FK_Basic_Announcement_Basic_ResourceItem" />
+        <EntityTypeShape EntityType="Models.Basic_BankInfo" Width="1.5" PointX="9.625" PointY="16.125" />
+        <EntityTypeShape EntityType="Models.Basic_CompanyInfo" Width="1.5" PointX="15.625" PointY="8.875" />
+        <AssociationConnector Association="Models.FK_Basic_CompanyInfo_Basic_Membership_User" />
+        <EntityTypeShape EntityType="Models.Product_ProductDefinition" Width="1.5" PointX="0.75" PointY="18.375" />
+        <EntityTypeShape EntityType="Models.Product_ProductForm" Width="1.5" PointX="12.375" PointY="8.75" />
+        <EntityTypeShape EntityType="Models.Product_ProductGpsFee" Width="1.5" PointX="3" PointY="22.125" />
+        <AssociationConnector Association="Models.FK_Product_ProductGpsFee_Product_ProductDefinition" />
+        <EntityTypeShape EntityType="Models.Basic_DataDictionary" Width="1.5" PointX="7.375" PointY="16.875" />
+        <AssociationConnector Association="Models.FK_Basic_Announcement_Basic_DataDictionary" />
+        <AssociationConnector Association="Models.FK_Basic_BankInfo_Basic_DataDictionary" />
+        <AssociationConnector Association="Models.FK_Basic_CompanyInfo_Basic_DataDictionary" />
+        <AssociationConnector Association="Models.FK_Basic_DataDictionary_Basic_DataDictionary" />
+        <EntityTypeShape EntityType="Models.Basic_ResourceList" Width="1.5" PointX="10" PointY="2.875" />
+        <AssociationConnector Association="Models.FK_Basic_ResourceList_Basic_ResourceItem" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

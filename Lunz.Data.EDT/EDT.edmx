@@ -1,0 +1,2177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Models.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Api_Application">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="255" />
+          <Property Name="AppType" Type="int" Nullable="false" />
+          <Property Name="Domain" Type="nvarchar" MaxLength="50" />
+          <Property Name="IPAddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="Enabled" Type="bit" Nullable="false" />
+          <Property Name="CreatedById" Type="uniqueidentifier" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="UpdatedById" Type="uniqueidentifier" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="DeletedById" Type="uniqueidentifier" />
+          <Property Name="DeletedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Api_ApplicationKey">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedById" Type="uniqueidentifier" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="UpdatedById" Type="uniqueidentifier" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="DeletedById" Type="uniqueidentifier" />
+          <Property Name="DeletedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Api_ApplicationLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ApplicationKeyId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="AccessURL" Type="nvarchar(max)" />
+          <Property Name="IPAddress" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Browser" Type="nvarchar" MaxLength="255" />
+          <Property Name="CreatedById" Type="uniqueidentifier" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="UpdatedById" Type="uniqueidentifier" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="DeletedById" Type="uniqueidentifier" />
+          <Property Name="DeletedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Basic_Announcement">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TypeId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Topic" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Text" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="StartDate" Type="datetime" />
+          <Property Name="EndDate" Type="datetime" />
+          <Property Name="AttachmentResourceItemId" Type="uniqueidentifier" />
+          <Property Name="CreatedById" Type="uniqueidentifier" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="UpdatedById" Type="uniqueidentifier" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="DeletedById" Type="uniqueidentifier" />
+          <Property Name="DeletedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Basic_BankInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="TypeId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ContactPerson" Type="nvarchar" MaxLength="50" />
+          <Property Name="Telephone" Type="varchar" MaxLength="20" />
+          <Property Name="PostalCode" Type="varchar" MaxLength="20" />
+          <Property Name="Address" Type="nvarchar" MaxLength="100" />
+          <Property Name="CreatedById" Type="uniqueidentifier" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="UpdatedById" Type="uniqueidentifier" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="DeletedById" Type="uniqueidentifier" />
+          <Property Name="DeletedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Basic_CompanyInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="NameEN" Type="nvarchar" MaxLength="50" />
+          <Property Name="Abbreviation" Type="nvarchar" MaxLength="50" />
+          <Property Name="Number" Type="int" />
+          <Property Name="TypeCode" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TypeName" Type="varchar" MaxLength="50" />
+          <Property Name="BusinessLicense" Type="varchar" MaxLength="50" />
+          <Property Name="BusinessTerm" Type="datetime" />
+          <Property Name="TaxRegistrationNo" Type="varchar" MaxLength="50" />
+          <Property Name="Founded" Type="datetime" />
+          <Property Name="RegistrationCapital" Type="money" />
+          <Property Name="BusinessScope" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Telephone" Type="varchar" MaxLength="20" />
+          <Property Name="Address" Type="nvarchar" MaxLength="50" />
+          <Property Name="Fax" Type="varchar" MaxLength="20" />
+          <Property Name="PostalCode" Type="varchar" MaxLength="20" />
+          <Property Name="OrganizationCode" Type="varchar" MaxLength="20" />
+          <Property Name="RegisteredAddress" Type="varchar" MaxLength="200" />
+          <Property Name="CompanyEmail" Type="varchar" MaxLength="50" />
+          <Property Name="Remarks" Type="nvarchar" MaxLength="1000" />
+          <Property Name="LegalName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LegalIDCard" Type="varchar" MaxLength="50" />
+          <Property Name="LegalTel" Type="varchar" MaxLength="20" />
+          <Property Name="LegalPostalCode" Type="varchar" MaxLength="50" />
+          <Property Name="LegalAddress" Type="varchar" MaxLength="200" />
+          <Property Name="LegalPhone" Type="varchar" MaxLength="20" />
+          <Property Name="LegaiEmail" Type="varchar" MaxLength="50" />
+          <Property Name="ContactName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ContactIDCard" Type="varchar" MaxLength="50" />
+          <Property Name="ContactTel" Type="varchar" MaxLength="20" />
+          <Property Name="ContactPostalCode" Type="varchar" MaxLength="50" />
+          <Property Name="ContactAddress" Type="varchar" MaxLength="200" />
+          <Property Name="ContactPhone" Type="varchar" MaxLength="20" />
+          <Property Name="ContactEmail" Type="varchar" MaxLength="50" />
+          <Property Name="SortOrder" Type="int" Nullable="false" />
+          <Property Name="CreatedById" Type="uniqueidentifier" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="UpdatedById" Type="uniqueidentifier" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="DeletedById" Type="uniqueidentifier" />
+          <Property Name="DeletedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Basic_DataDictionary">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Code" Type="varchar" MaxLength="10" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="ParentId" Type="uniqueidentifier" />
+          <Property Name="StringValue" Type="varchar(max)" />
+          <Property Name="IntValue" Type="int" />
+          <Property Name="FloatValue" Type="float" />
+          <Property Name="BoolValue" Type="bit" />
+          <Property Name="DateTimeValue" Type="datetime" />
+          <Property Name="Description" Type="varchar" MaxLength="1000" />
+          <Property Name="SortOrder" Type="int" Nullable="false" />
+          <Property Name="CreatedById" Type="uniqueidentifier" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="UpdatedById" Type="uniqueidentifier" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="DeletedById" Type="uniqueidentifier" />
+          <Property Name="DeletedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Basic_Logs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="LogLevel" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Message" Type="varchar" MaxLength="1000" Nullable="false" />
+          <Property Name="LogTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Basic_ResourceItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Filename" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Url" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="FileType" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="FileLength" Type="bigint" Nullable="false" />
+          <Property Name="CreatedById" Type="uniqueidentifier" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="UpdatedById" Type="uniqueidentifier" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="DeletedById" Type="uniqueidentifier" />
+          <Property Name="DeletedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Basic_ResourceList">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" />
+          <Property Name="ObjectId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ResourceItemId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedById" Type="uniqueidentifier" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="UpdatedById" Type="uniqueidentifier" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="DeletedById" Type="uniqueidentifier" />
+          <Property Name="DeletedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Membership_AuthToken">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ApplicationKeyId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Expired" Type="datetime" Nullable="false" />
+          <Property Name="CreatedById" Type="uniqueidentifier" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="UpdatedById" Type="uniqueidentifier" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="DeletedById" Type="uniqueidentifier" />
+          <Property Name="DeletedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Membership_MenuItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ParentId" Type="uniqueidentifier" />
+          <Property Name="NgUrl" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="TargetUrl" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Icon" Type="nvarchar" MaxLength="20" />
+          <Property Name="IsPermission" Type="bit" Nullable="false" />
+          <Property Name="Visible" Type="bit" Nullable="false" />
+          <Property Name="SortOrder" Type="int" Nullable="false" />
+          <Property Name="CreatedById" Type="uniqueidentifier" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="UpdatedById" Type="uniqueidentifier" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="DeletedById" Type="uniqueidentifier" />
+          <Property Name="DeletedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Membership_User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="DisplayName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="MemberType" Type="int" Nullable="false" />
+          <Property Name="VIPLevelId" Type="uniqueidentifier" />
+          <Property Name="Actived" Type="bit" Nullable="false" />
+          <Property Name="Approved" Type="bit" Nullable="false" />
+          <Property Name="LatestLoginAt" Type="datetime" />
+          <Property Name="CreatedById" Type="uniqueidentifier" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="UpdatedById" Type="uniqueidentifier" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="DeletedById" Type="uniqueidentifier" />
+          <Property Name="DeletedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Membership_UserResetPassword">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Expired" Type="datetime" Nullable="false" />
+          <Property Name="CreatedById" Type="uniqueidentifier" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="UpdatedById" Type="uniqueidentifier" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="DeletedById" Type="uniqueidentifier" />
+          <Property Name="DeletedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Membership_VIPLevel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedById" Type="uniqueidentifier" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="UpdatedById" Type="uniqueidentifier" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="DeletedById" Type="uniqueidentifier" />
+          <Property Name="DeletedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Object_AttributeArea">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ObjectId" Type="uniqueidentifier" />
+          <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="SortOrder" Type="int" Nullable="false" />
+          <Property Name="CreatedById" Type="uniqueidentifier" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="UpdatedById" Type="uniqueidentifier" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="DeletedById" Type="uniqueidentifier" />
+          <Property Name="DeletedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Object_AttributeCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="AreaId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="SortOrder" Type="int" Nullable="false" />
+          <Property Name="CreatedById" Type="uniqueidentifier" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="UpdatedById" Type="uniqueidentifier" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="DeletedById" Type="uniqueidentifier" />
+          <Property Name="DeletedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Object_AttributeFiled">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CategoryId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="DataType" Type="int" Nullable="false" />
+          <Property Name="Visible" Type="bit" Nullable="false" />
+          <Property Name="Searchable" Type="bit" Nullable="false" />
+          <Property Name="SortOrder" Type="int" Nullable="false" />
+          <Property Name="CreatedById" Type="uniqueidentifier" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="UpdatedById" Type="uniqueidentifier" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="DeletedById" Type="uniqueidentifier" />
+          <Property Name="DeletedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Object_AttributeValue">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="AttributeId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="StringValue" Type="varchar(max)" />
+          <Property Name="IntValue" Type="int" />
+          <Property Name="FloatValue" Type="float" />
+          <Property Name="BoolValue" Type="bit" />
+          <Property Name="DateTimeValue" Type="datetime" />
+          <Property Name="Value" Type="image" />
+          <Property Name="CreatedById" Type="uniqueidentifier" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="UpdatedById" Type="uniqueidentifier" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="DeletedById" Type="uniqueidentifier" />
+          <Property Name="DeletedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Product_ProductContract">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="TemplateHtml" Type="varchar(max)" Nullable="false" />
+          <Property Name="SortOrder" Type="int" Nullable="false" />
+          <Property Name="CreatedById" Type="uniqueidentifier" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="UpdatedById" Type="uniqueidentifier" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="DeletedById" Type="uniqueidentifier" />
+          <Property Name="DeletedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Product_ProductDefinition">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="ProductTypeCode" Type="varchar" MaxLength="10" />
+          <Property Name="VehicleTypeCode" Type="varchar" MaxLength="10" />
+          <Property Name="DownPayment" Type="float" />
+          <Property Name="DownPaymentStart" Type="float" />
+          <Property Name="DownPaymentEnd" Type="float" />
+          <Property Name="DownPaymentEditable" Type="bit" Nullable="false" />
+          <Property Name="DownPaymentSumTypeCode" Type="varchar" MaxLength="10" />
+          <Property Name="Margin" Type="float" />
+          <Property Name="MarginStart" Type="float" />
+          <Property Name="MarginEnd" Type="float" />
+          <Property Name="MarginEditable" Type="bit" Nullable="false" />
+          <Property Name="MarginSumTypeCode" Type="varchar" MaxLength="10" />
+          <Property Name="Fee" Type="float" />
+          <Property Name="FeeStart" Type="float" />
+          <Property Name="FeeEnd" Type="float" />
+          <Property Name="FeeEditable" Type="bit" Nullable="false" />
+          <Property Name="FeeSumTypeCode" Type="varchar" MaxLength="10" />
+          <Property Name="FeeCalTypeCode" Type="varchar" MaxLength="10" />
+          <Property Name="FinalPayment" Type="float" />
+          <Property Name="FinalPaymentStart" Type="float" />
+          <Property Name="FinalPaymentEnd" Type="float" />
+          <Property Name="FinalPaymentEditable" Type="bit" Nullable="false" />
+          <Property Name="FinalPaymentSumTypeCode" Type="varchar" MaxLength="10" />
+          <Property Name="InterestRate" Type="float" />
+          <Property Name="InterestRateStart" Type="float" />
+          <Property Name="InterestRateEnd" Type="float" />
+          <Property Name="InterestRateEditable" Type="bit" Nullable="false" />
+          <Property Name="Lease" Type="int" />
+          <Property Name="LeaseStart" Type="int" />
+          <Property Name="LeaseEnd" Type="int" />
+          <Property Name="LeaseEditable" Type="bit" Nullable="false" />
+          <Property Name="LendingTypeCode" Type="varchar" MaxLength="10" />
+          <Property Name="MarginDealTypeCode" Type="varchar" MaxLength="10" />
+          <Property Name="GpsInstallTypeCode" Type="varchar" MaxLength="10" />
+          <Property Name="PurchaseTaxSumTypeCode" Type="varchar" MaxLength="10" />
+          <Property Name="InsuranceSumTypeCode" Type="varchar" MaxLength="10" />
+          <Property Name="ExpirationDate" Type="datetime" />
+          <Property Name="FinancingVolumeStart" Type="money" />
+          <Property Name="FinancingVolumeEnd" Type="money" />
+          <Property Name="FinancingVolumeSumTypeCode" Type="varchar" MaxLength="10" />
+          <Property Name="CalTypeId" Type="varchar" MaxLength="10" />
+          <Property Name="GpsFeeEditable" Type="bit" Nullable="false" />
+          <Property Name="SortOrder" Type="int" Nullable="false" />
+          <Property Name="CreatedById" Type="uniqueidentifier" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="UpdatedById" Type="uniqueidentifier" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="DeletedById" Type="uniqueidentifier" />
+          <Property Name="DeletedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Product_ProductForm">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="CreatedById" Type="uniqueidentifier" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="UpdatedById" Type="uniqueidentifier" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="DeletedById" Type="uniqueidentifier" />
+          <Property Name="DeletedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Product_ProductGpsFee">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ProductId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Year" Type="int" Nullable="false" />
+          <Property Name="Price" Type="money" Nullable="false" />
+          <Property Name="CreatedById" Type="uniqueidentifier" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="UpdatedById" Type="uniqueidentifier" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="DeletedById" Type="uniqueidentifier" />
+          <Property Name="DeletedAt" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_Api_ApplicationKey_Api_Application">
+          <End Role="Api_Application" Type="Self.Api_Application" Multiplicity="1" />
+          <End Role="Api_ApplicationKey" Type="Self.Api_ApplicationKey" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Api_Application">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Api_ApplicationKey">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Api_ApplicationLog_Api_Application">
+          <End Role="Api_Application" Type="Self.Api_Application" Multiplicity="1" />
+          <End Role="Api_ApplicationLog" Type="Self.Api_ApplicationLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Api_Application">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Api_ApplicationLog">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Api_ApplicationLog_Api_ApplicationKey">
+          <End Role="Api_ApplicationKey" Type="Self.Api_ApplicationKey" Multiplicity="1" />
+          <End Role="Api_ApplicationLog" Type="Self.Api_ApplicationLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Api_ApplicationKey">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Api_ApplicationLog">
+              <PropertyRef Name="ApplicationKeyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Basic_Announcement_Basic_DataDictionary">
+          <End Role="Basic_DataDictionary" Type="Self.Basic_DataDictionary" Multiplicity="1" />
+          <End Role="Basic_Announcement" Type="Self.Basic_Announcement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Basic_DataDictionary">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Basic_Announcement">
+              <PropertyRef Name="TypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Basic_Announcement_Basic_ResourceItem">
+          <End Role="Basic_ResourceItem" Type="Self.Basic_ResourceItem" Multiplicity="0..1" />
+          <End Role="Basic_Announcement" Type="Self.Basic_Announcement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Basic_ResourceItem">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Basic_Announcement">
+              <PropertyRef Name="AttachmentResourceItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Basic_BankInfo_Basic_DataDictionary">
+          <End Role="Basic_DataDictionary" Type="Self.Basic_DataDictionary" Multiplicity="1" />
+          <End Role="Basic_BankInfo" Type="Self.Basic_BankInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Basic_DataDictionary">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Basic_BankInfo">
+              <PropertyRef Name="TypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Basic_CompanyInfo_Basic_DataDictionary">
+          <End Role="Basic_DataDictionary" Type="Self.Basic_DataDictionary" Multiplicity="1" />
+          <End Role="Basic_CompanyInfo" Type="Self.Basic_CompanyInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Basic_DataDictionary">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Basic_CompanyInfo">
+              <PropertyRef Name="TypeCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Basic_CompanyInfo_Basic_Membership_User">
+          <End Role="Membership_User" Type="Self.Membership_User" Multiplicity="0..1" />
+          <End Role="Basic_CompanyInfo" Type="Self.Basic_CompanyInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Membership_User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Basic_CompanyInfo">
+              <PropertyRef Name="CreatedById" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Basic_DataDictionary_Basic_DataDictionary">
+          <End Role="Basic_DataDictionary" Type="Self.Basic_DataDictionary" Multiplicity="0..1" />
+          <End Role="Basic_DataDictionary1" Type="Self.Basic_DataDictionary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Basic_DataDictionary">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Basic_DataDictionary1">
+              <PropertyRef Name="ParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Basic_ResourceList_Basic_ResourceItem">
+          <End Role="Basic_ResourceItem" Type="Self.Basic_ResourceItem" Multiplicity="1" />
+          <End Role="Basic_ResourceList" Type="Self.Basic_ResourceList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Basic_ResourceItem">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Basic_ResourceList">
+              <PropertyRef Name="ResourceItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Membership_AuthToken_Api_ApplicationKey">
+          <End Role="Api_ApplicationKey" Type="Self.Api_ApplicationKey" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Membership_AuthToken" Type="Self.Membership_AuthToken" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Api_ApplicationKey">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Membership_AuthToken">
+              <PropertyRef Name="ApplicationKeyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Membership_AuthToken_Membership_User">
+          <End Role="Membership_User" Type="Self.Membership_User" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Membership_AuthToken" Type="Self.Membership_AuthToken" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Membership_User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Membership_AuthToken">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Membership_MenuItem_Membership_MenuItem">
+          <End Role="Membership_MenuItem" Type="Self.Membership_MenuItem" Multiplicity="0..1" />
+          <End Role="Membership_MenuItem1" Type="Self.Membership_MenuItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Membership_MenuItem">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Membership_MenuItem1">
+              <PropertyRef Name="ParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Membership_User_Membership_VIPLevel">
+          <End Role="Membership_VIPLevel" Type="Self.Membership_VIPLevel" Multiplicity="0..1" />
+          <End Role="Membership_User" Type="Self.Membership_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Membership_VIPLevel">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Membership_User">
+              <PropertyRef Name="VIPLevelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Membership_UserResetPassword_Membership_User">
+          <End Role="Membership_User" Type="Self.Membership_User" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Membership_UserResetPassword" Type="Self.Membership_UserResetPassword" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Membership_User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Membership_UserResetPassword">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Object_AttributeCategory_Object_AttributeArea">
+          <End Role="Object_AttributeArea" Type="Self.Object_AttributeArea" Multiplicity="1" />
+          <End Role="Object_AttributeCategory" Type="Self.Object_AttributeCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Object_AttributeArea">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Object_AttributeCategory">
+              <PropertyRef Name="AreaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Object_AttributeFiled_Object_AttributeCategory">
+          <End Role="Object_AttributeCategory" Type="Self.Object_AttributeCategory" Multiplicity="1" />
+          <End Role="Object_AttributeFiled" Type="Self.Object_AttributeFiled" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Object_AttributeCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Object_AttributeFiled">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Object_AttributeValue_Object_AttributeFiled">
+          <End Role="Object_AttributeFiled" Type="Self.Object_AttributeFiled" Multiplicity="1" />
+          <End Role="Object_AttributeValue" Type="Self.Object_AttributeValue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Object_AttributeFiled">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Object_AttributeValue">
+              <PropertyRef Name="AttributeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_ProductGpsFee_Product_ProductDefinition">
+          <End Role="Product_ProductDefinition" Type="Self.Product_ProductDefinition" Multiplicity="1" />
+          <End Role="Product_ProductGpsFee" Type="Self.Product_ProductGpsFee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product_ProductDefinition">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product_ProductGpsFee">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ModelsStoreContainer">
+          <EntitySet Name="Api_Application" EntityType="Self.Api_Application" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Api_ApplicationKey" EntityType="Self.Api_ApplicationKey" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Api_ApplicationLog" EntityType="Self.Api_ApplicationLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Basic_Announcement" EntityType="Self.Basic_Announcement" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Basic_BankInfo" EntityType="Self.Basic_BankInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Basic_CompanyInfo" EntityType="Self.Basic_CompanyInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Basic_DataDictionary" EntityType="Self.Basic_DataDictionary" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Basic_Logs" EntityType="Self.Basic_Logs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Basic_ResourceItem" EntityType="Self.Basic_ResourceItem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Basic_ResourceList" EntityType="Self.Basic_ResourceList" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Membership_AuthToken" EntityType="Self.Membership_AuthToken" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Membership_MenuItem" EntityType="Self.Membership_MenuItem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Membership_User" EntityType="Self.Membership_User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Membership_UserResetPassword" EntityType="Self.Membership_UserResetPassword" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Membership_VIPLevel" EntityType="Self.Membership_VIPLevel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Object_AttributeArea" EntityType="Self.Object_AttributeArea" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Object_AttributeCategory" EntityType="Self.Object_AttributeCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Object_AttributeFiled" EntityType="Self.Object_AttributeFiled" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Object_AttributeValue" EntityType="Self.Object_AttributeValue" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product_ProductContract" EntityType="Self.Product_ProductContract" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product_ProductDefinition" EntityType="Self.Product_ProductDefinition" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product_ProductForm" EntityType="Self.Product_ProductForm" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product_ProductGpsFee" EntityType="Self.Product_ProductGpsFee" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Api_ApplicationKey_Api_Application" Association="Self.FK_Api_ApplicationKey_Api_Application">
+            <End Role="Api_Application" EntitySet="Api_Application" />
+            <End Role="Api_ApplicationKey" EntitySet="Api_ApplicationKey" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Api_ApplicationLog_Api_Application" Association="Self.FK_Api_ApplicationLog_Api_Application">
+            <End Role="Api_Application" EntitySet="Api_Application" />
+            <End Role="Api_ApplicationLog" EntitySet="Api_ApplicationLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Api_ApplicationLog_Api_ApplicationKey" Association="Self.FK_Api_ApplicationLog_Api_ApplicationKey">
+            <End Role="Api_ApplicationKey" EntitySet="Api_ApplicationKey" />
+            <End Role="Api_ApplicationLog" EntitySet="Api_ApplicationLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Basic_Announcement_Basic_DataDictionary" Association="Self.FK_Basic_Announcement_Basic_DataDictionary">
+            <End Role="Basic_DataDictionary" EntitySet="Basic_DataDictionary" />
+            <End Role="Basic_Announcement" EntitySet="Basic_Announcement" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Basic_Announcement_Basic_ResourceItem" Association="Self.FK_Basic_Announcement_Basic_ResourceItem">
+            <End Role="Basic_ResourceItem" EntitySet="Basic_ResourceItem" />
+            <End Role="Basic_Announcement" EntitySet="Basic_Announcement" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Basic_BankInfo_Basic_DataDictionary" Association="Self.FK_Basic_BankInfo_Basic_DataDictionary">
+            <End Role="Basic_DataDictionary" EntitySet="Basic_DataDictionary" />
+            <End Role="Basic_BankInfo" EntitySet="Basic_BankInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Basic_CompanyInfo_Basic_DataDictionary" Association="Self.FK_Basic_CompanyInfo_Basic_DataDictionary">
+            <End Role="Basic_DataDictionary" EntitySet="Basic_DataDictionary" />
+            <End Role="Basic_CompanyInfo" EntitySet="Basic_CompanyInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Basic_CompanyInfo_Basic_Membership_User" Association="Self.FK_Basic_CompanyInfo_Basic_Membership_User">
+            <End Role="Membership_User" EntitySet="Membership_User" />
+            <End Role="Basic_CompanyInfo" EntitySet="Basic_CompanyInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Basic_DataDictionary_Basic_DataDictionary" Association="Self.FK_Basic_DataDictionary_Basic_DataDictionary">
+            <End Role="Basic_DataDictionary" EntitySet="Basic_DataDictionary" />
+            <End Role="Basic_DataDictionary1" EntitySet="Basic_DataDictionary" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Basic_ResourceList_Basic_ResourceItem" Association="Self.FK_Basic_ResourceList_Basic_ResourceItem">
+            <End Role="Basic_ResourceItem" EntitySet="Basic_ResourceItem" />
+            <End Role="Basic_ResourceList" EntitySet="Basic_ResourceList" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Membership_AuthToken_Api_ApplicationKey" Association="Self.FK_Membership_AuthToken_Api_ApplicationKey">
+            <End Role="Api_ApplicationKey" EntitySet="Api_ApplicationKey" />
+            <End Role="Membership_AuthToken" EntitySet="Membership_AuthToken" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Membership_AuthToken_Membership_User" Association="Self.FK_Membership_AuthToken_Membership_User">
+            <End Role="Membership_User" EntitySet="Membership_User" />
+            <End Role="Membership_AuthToken" EntitySet="Membership_AuthToken" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Membership_MenuItem_Membership_MenuItem" Association="Self.FK_Membership_MenuItem_Membership_MenuItem">
+            <End Role="Membership_MenuItem" EntitySet="Membership_MenuItem" />
+            <End Role="Membership_MenuItem1" EntitySet="Membership_MenuItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Membership_User_Membership_VIPLevel" Association="Self.FK_Membership_User_Membership_VIPLevel">
+            <End Role="Membership_VIPLevel" EntitySet="Membership_VIPLevel" />
+            <End Role="Membership_User" EntitySet="Membership_User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Membership_UserResetPassword_Membership_User" Association="Self.FK_Membership_UserResetPassword_Membership_User">
+            <End Role="Membership_User" EntitySet="Membership_User" />
+            <End Role="Membership_UserResetPassword" EntitySet="Membership_UserResetPassword" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Object_AttributeCategory_Object_AttributeArea" Association="Self.FK_Object_AttributeCategory_Object_AttributeArea">
+            <End Role="Object_AttributeArea" EntitySet="Object_AttributeArea" />
+            <End Role="Object_AttributeCategory" EntitySet="Object_AttributeCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Object_AttributeFiled_Object_AttributeCategory" Association="Self.FK_Object_AttributeFiled_Object_AttributeCategory">
+            <End Role="Object_AttributeCategory" EntitySet="Object_AttributeCategory" />
+            <End Role="Object_AttributeFiled" EntitySet="Object_AttributeFiled" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Object_AttributeValue_Object_AttributeFiled" Association="Self.FK_Object_AttributeValue_Object_AttributeFiled">
+            <End Role="Object_AttributeFiled" EntitySet="Object_AttributeFiled" />
+            <End Role="Object_AttributeValue" EntitySet="Object_AttributeValue" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_ProductGpsFee_Product_ProductDefinition" Association="Self.FK_Product_ProductGpsFee_Product_ProductDefinition">
+            <End Role="Product_ProductDefinition" EntitySet="Product_ProductDefinition" />
+            <End Role="Product_ProductGpsFee" EntitySet="Product_ProductGpsFee" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Models" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="EDT_DBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Api_Application" EntityType="Models.Api_Application" />
+          <EntitySet Name="Api_ApplicationKey" EntityType="Models.Api_ApplicationKey" />
+          <EntitySet Name="Api_ApplicationLog" EntityType="Models.Api_ApplicationLog" />
+          <EntitySet Name="Basic_ResourceItem" EntityType="Models.Basic_ResourceItem" />
+          <EntitySet Name="Membership_AuthToken" EntityType="Models.Membership_AuthToken" />
+          <EntitySet Name="Membership_MenuItem" EntityType="Models.Membership_MenuItem" />
+          <EntitySet Name="Membership_User" EntityType="Models.Membership_User" />
+          <EntitySet Name="Membership_UserResetPassword" EntityType="Models.Membership_UserResetPassword" />
+          <EntitySet Name="Membership_VIPLevel" EntityType="Models.Membership_VIPLevel" />
+          <AssociationSet Name="FK_Api_ApplicationKey_Api_Application" Association="Models.FK_Api_ApplicationKey_Api_Application">
+            <End Role="Api_Application" EntitySet="Api_Application" />
+            <End Role="Api_ApplicationKey" EntitySet="Api_ApplicationKey" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Api_ApplicationLog_Api_Application" Association="Models.FK_Api_ApplicationLog_Api_Application">
+            <End Role="Api_Application" EntitySet="Api_Application" />
+            <End Role="Api_ApplicationLog" EntitySet="Api_ApplicationLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Api_ApplicationLog_Api_ApplicationKey" Association="Models.FK_Api_ApplicationLog_Api_ApplicationKey">
+            <End Role="Api_ApplicationKey" EntitySet="Api_ApplicationKey" />
+            <End Role="Api_ApplicationLog" EntitySet="Api_ApplicationLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Membership_AuthToken_Api_ApplicationKey" Association="Models.FK_Membership_AuthToken_Api_ApplicationKey">
+            <End Role="Api_ApplicationKey" EntitySet="Api_ApplicationKey" />
+            <End Role="Membership_AuthToken" EntitySet="Membership_AuthToken" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Membership_AuthToken_Membership_User" Association="Models.FK_Membership_AuthToken_Membership_User">
+            <End Role="Membership_User" EntitySet="Membership_User" />
+            <End Role="Membership_AuthToken" EntitySet="Membership_AuthToken" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Membership_MenuItem_Membership_MenuItem" Association="Models.FK_Membership_MenuItem_Membership_MenuItem">
+            <End Role="Membership_MenuItem" EntitySet="Membership_MenuItem" />
+            <End Role="Membership_MenuItem1" EntitySet="Membership_MenuItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Membership_User_Membership_VIPLevel" Association="Models.FK_Membership_User_Membership_VIPLevel">
+            <End Role="Membership_VIPLevel" EntitySet="Membership_VIPLevel" />
+            <End Role="Membership_User" EntitySet="Membership_User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Membership_UserResetPassword_Membership_User" Association="Models.FK_Membership_UserResetPassword_Membership_User">
+            <End Role="Membership_User" EntitySet="Membership_User" />
+            <End Role="Membership_UserResetPassword" EntitySet="Membership_UserResetPassword" />
+          </AssociationSet>
+          <EntitySet Name="Basic_Logs" EntityType="Models.Basic_Logs" />
+          <EntitySet Name="Object_AttributeFiled" EntityType="Models.Object_AttributeFiled" />
+          <EntitySet Name="Object_AttributeValue" EntityType="Models.Object_AttributeValue" />
+          <AssociationSet Name="FK_Object_AttributeValue_Object_AttributeFiled" Association="Models.FK_Object_AttributeValue_Object_AttributeFiled">
+            <End Role="Object_AttributeFiled" EntitySet="Object_AttributeFiled" />
+            <End Role="Object_AttributeValue" EntitySet="Object_AttributeValue" />
+          </AssociationSet>
+          <EntitySet Name="Object_AttributeArea" EntityType="Models.Object_AttributeArea" />
+          <EntitySet Name="Product_ProductContract" EntityType="Models.Product_ProductContract" />
+          <EntitySet Name="Object_AttributeCategory" EntityType="Models.Object_AttributeCategory" />
+          <AssociationSet Name="FK_Object_AttributeCategory_Object_AttributeArea" Association="Models.FK_Object_AttributeCategory_Object_AttributeArea">
+            <End Role="Object_AttributeArea" EntitySet="Object_AttributeArea" />
+            <End Role="Object_AttributeCategory" EntitySet="Object_AttributeCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Object_AttributeFiled_Object_AttributeCategory" Association="Models.FK_Object_AttributeFiled_Object_AttributeCategory">
+            <End Role="Object_AttributeCategory" EntitySet="Object_AttributeCategory" />
+            <End Role="Object_AttributeFiled" EntitySet="Object_AttributeFiled" />
+          </AssociationSet>
+          <EntitySet Name="Basic_Announcement" EntityType="Models.Basic_Announcement" />
+          <AssociationSet Name="FK_Basic_Announcement_Basic_ResourceItem" Association="Models.FK_Basic_Announcement_Basic_ResourceItem">
+            <End Role="Basic_ResourceItem" EntitySet="Basic_ResourceItem" />
+            <End Role="Basic_Announcement" EntitySet="Basic_Announcement" />
+          </AssociationSet>
+          <EntitySet Name="Basic_BankInfo" EntityType="Models.Basic_BankInfo" />
+          <EntitySet Name="Basic_CompanyInfo" EntityType="Models.Basic_CompanyInfo" />
+          <AssociationSet Name="FK_Basic_CompanyInfo_Basic_Membership_User" Association="Models.FK_Basic_CompanyInfo_Basic_Membership_User">
+            <End Role="Membership_User" EntitySet="Membership_User" />
+            <End Role="Basic_CompanyInfo" EntitySet="Basic_CompanyInfo" />
+          </AssociationSet>
+          <EntitySet Name="Product_ProductDefinition" EntityType="Models.Product_ProductDefinition" />
+          <EntitySet Name="Product_ProductForm" EntityType="Models.Product_ProductForm" />
+          <EntitySet Name="Product_ProductGpsFee" EntityType="Models.Product_ProductGpsFee" />
+          <AssociationSet Name="FK_Product_ProductGpsFee_Product_ProductDefinition" Association="Models.FK_Product_ProductGpsFee_Product_ProductDefinition">
+            <End Role="Product_ProductDefinition" EntitySet="Product_ProductDefinition" />
+            <End Role="Product_ProductGpsFee" EntitySet="Product_ProductGpsFee" />
+          </AssociationSet>
+          <EntitySet Name="Basic_DataDictionary" EntityType="Models.Basic_DataDictionary" />
+          <AssociationSet Name="FK_Basic_Announcement_Basic_DataDictionary" Association="Models.FK_Basic_Announcement_Basic_DataDictionary">
+            <End Role="Basic_DataDictionary" EntitySet="Basic_DataDictionary" />
+            <End Role="Basic_Announcement" EntitySet="Basic_Announcement" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Basic_BankInfo_Basic_DataDictionary" Association="Models.FK_Basic_BankInfo_Basic_DataDictionary">
+            <End Role="Basic_DataDictionary" EntitySet="Basic_DataDictionary" />
+            <End Role="Basic_BankInfo" EntitySet="Basic_BankInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Basic_CompanyInfo_Basic_DataDictionary" Association="Models.FK_Basic_CompanyInfo_Basic_DataDictionary">
+            <End Role="Basic_DataDictionary" EntitySet="Basic_DataDictionary" />
+            <End Role="Basic_CompanyInfo" EntitySet="Basic_CompanyInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Basic_DataDictionary_Basic_DataDictionary" Association="Models.FK_Basic_DataDictionary_Basic_DataDictionary">
+            <End Role="Basic_DataDictionary" EntitySet="Basic_DataDictionary" />
+            <End Role="Basic_DataDictionary1" EntitySet="Basic_DataDictionary" />
+          </AssociationSet>
+          <EntitySet Name="Basic_ResourceList" EntityType="Models.Basic_ResourceList" />
+          <AssociationSet Name="FK_Basic_ResourceList_Basic_ResourceItem" Association="Models.FK_Basic_ResourceList_Basic_ResourceItem">
+            <End Role="Basic_ResourceItem" EntitySet="Basic_ResourceItem" />
+            <End Role="Basic_ResourceList" EntitySet="Basic_ResourceList" />
+          </AssociationSet>
+        </EntityContainer>
+        <EnumType Name="DataTypes" a:ExternalTypeName="Lunz.Data.EDT.DataTypes" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+        <EnumType Name="AppTypes" a:ExternalTypeName="Lunz.Data.EDT.AppTypes" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+        <EntityType Name="Api_Application">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AppType" Type="Models.AppTypes" Nullable="false" />
+          <Property Name="Domain" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IPAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Enabled" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedById" Type="Guid" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedById" Type="Guid" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="DeletedById" Type="Guid" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Api_ApplicationKey" Relationship="Models.FK_Api_ApplicationKey_Api_Application" FromRole="Api_Application" ToRole="Api_ApplicationKey" />
+          <NavigationProperty Name="Api_ApplicationLog" Relationship="Models.FK_Api_ApplicationLog_Api_Application" FromRole="Api_Application" ToRole="Api_ApplicationLog" />
+        </EntityType>
+        <EntityType Name="Api_ApplicationKey">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+          <Property Name="CreatedById" Type="Guid" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedById" Type="Guid" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="DeletedById" Type="Guid" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Api_Application" Relationship="Models.FK_Api_ApplicationKey_Api_Application" FromRole="Api_ApplicationKey" ToRole="Api_Application" />
+          <NavigationProperty Name="Api_ApplicationLog" Relationship="Models.FK_Api_ApplicationLog_Api_ApplicationKey" FromRole="Api_ApplicationKey" ToRole="Api_ApplicationLog" />
+          <NavigationProperty Name="Membership_AuthToken" Relationship="Models.FK_Membership_AuthToken_Api_ApplicationKey" FromRole="Api_ApplicationKey" ToRole="Membership_AuthToken" />
+        </EntityType>
+        <EntityType Name="Api_ApplicationLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+          <Property Name="ApplicationKeyId" Type="Guid" Nullable="false" />
+          <Property Name="AccessURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IPAddress" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Browser" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedById" Type="Guid" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedById" Type="Guid" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="DeletedById" Type="Guid" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Api_Application" Relationship="Models.FK_Api_ApplicationLog_Api_Application" FromRole="Api_ApplicationLog" ToRole="Api_Application" />
+          <NavigationProperty Name="Api_ApplicationKey" Relationship="Models.FK_Api_ApplicationLog_Api_ApplicationKey" FromRole="Api_ApplicationLog" ToRole="Api_ApplicationKey" />
+        </EntityType>
+        <EntityType Name="Basic_ResourceItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Filename" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Url" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="FileType" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="FileLength" Type="Int64" Nullable="false" />
+          <Property Name="CreatedById" Type="Guid" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedById" Type="Guid" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="DeletedById" Type="Guid" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Basic_Announcement" Relationship="Models.FK_Basic_Announcement_Basic_ResourceItem" FromRole="Basic_ResourceItem" ToRole="Basic_Announcement" />
+          <NavigationProperty Name="Basic_ResourceList" Relationship="Models.FK_Basic_ResourceList_Basic_ResourceItem" FromRole="Basic_ResourceItem" ToRole="Basic_ResourceList" />
+        </EntityType>
+        <EntityType Name="Membership_AuthToken">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="ApplicationKeyId" Type="Guid" Nullable="false" />
+          <Property Name="Expired" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedById" Type="Guid" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedById" Type="Guid" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="DeletedById" Type="Guid" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Api_ApplicationKey" Relationship="Models.FK_Membership_AuthToken_Api_ApplicationKey" FromRole="Membership_AuthToken" ToRole="Api_ApplicationKey" />
+          <NavigationProperty Name="Membership_User" Relationship="Models.FK_Membership_AuthToken_Membership_User" FromRole="Membership_AuthToken" ToRole="Membership_User" />
+        </EntityType>
+        <EntityType Name="Membership_MenuItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ParentId" Type="Guid" />
+          <Property Name="NgUrl" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="TargetUrl" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Icon" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="IsPermission" Type="Boolean" Nullable="false" />
+          <Property Name="Visible" Type="Boolean" Nullable="false" />
+          <Property Name="SortOrder" Type="Int32" Nullable="false" />
+          <Property Name="CreatedById" Type="Guid" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedById" Type="Guid" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="DeletedById" Type="Guid" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Membership_MenuItem1" Relationship="Models.FK_Membership_MenuItem_Membership_MenuItem" FromRole="Membership_MenuItem" ToRole="Membership_MenuItem1" />
+          <NavigationProperty Name="Membership_MenuItem2" Relationship="Models.FK_Membership_MenuItem_Membership_MenuItem" FromRole="Membership_MenuItem1" ToRole="Membership_MenuItem" />
+        </EntityType>
+        <EntityType Name="Membership_User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DisplayName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MemberType" Type="Int32" Nullable="false" />
+          <Property Name="VIPLevelId" Type="Guid" />
+          <Property Name="Actived" Type="Boolean" Nullable="false" />
+          <Property Name="Approved" Type="Boolean" Nullable="false" />
+          <Property Name="LatestLoginAt" Type="DateTime" Precision="3" />
+          <Property Name="CreatedById" Type="Guid" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedById" Type="Guid" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="DeletedById" Type="Guid" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Membership_AuthToken" Relationship="Models.FK_Membership_AuthToken_Membership_User" FromRole="Membership_User" ToRole="Membership_AuthToken" />
+          <NavigationProperty Name="Membership_VIPLevel" Relationship="Models.FK_Membership_User_Membership_VIPLevel" FromRole="Membership_User" ToRole="Membership_VIPLevel" />
+          <NavigationProperty Name="Membership_UserResetPassword" Relationship="Models.FK_Membership_UserResetPassword_Membership_User" FromRole="Membership_User" ToRole="Membership_UserResetPassword" />
+          <NavigationProperty Name="Basic_CompanyInfo" Relationship="Models.FK_Basic_CompanyInfo_Basic_Membership_User" FromRole="Membership_User" ToRole="Basic_CompanyInfo" />
+        </EntityType>
+        <EntityType Name="Membership_UserResetPassword">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="Expired" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedById" Type="Guid" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedById" Type="Guid" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="DeletedById" Type="Guid" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Membership_User" Relationship="Models.FK_Membership_UserResetPassword_Membership_User" FromRole="Membership_UserResetPassword" ToRole="Membership_User" />
+        </EntityType>
+        <EntityType Name="Membership_VIPLevel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedById" Type="Guid" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedById" Type="Guid" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="DeletedById" Type="Guid" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Membership_User" Relationship="Models.FK_Membership_User_Membership_VIPLevel" FromRole="Membership_VIPLevel" ToRole="Membership_User" />
+        </EntityType>
+        <Association Name="FK_Api_ApplicationKey_Api_Application">
+          <End Type="Models.Api_Application" Role="Api_Application" Multiplicity="1" />
+          <End Type="Models.Api_ApplicationKey" Role="Api_ApplicationKey" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Api_Application">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Api_ApplicationKey">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Api_ApplicationLog_Api_Application">
+          <End Type="Models.Api_Application" Role="Api_Application" Multiplicity="1" />
+          <End Type="Models.Api_ApplicationLog" Role="Api_ApplicationLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Api_Application">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Api_ApplicationLog">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Api_ApplicationLog_Api_ApplicationKey">
+          <End Type="Models.Api_ApplicationKey" Role="Api_ApplicationKey" Multiplicity="1" />
+          <End Type="Models.Api_ApplicationLog" Role="Api_ApplicationLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Api_ApplicationKey">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Api_ApplicationLog">
+              <PropertyRef Name="ApplicationKeyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Membership_AuthToken_Api_ApplicationKey">
+          <End Type="Models.Api_ApplicationKey" Role="Api_ApplicationKey" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Models.Membership_AuthToken" Role="Membership_AuthToken" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Api_ApplicationKey">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Membership_AuthToken">
+              <PropertyRef Name="ApplicationKeyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Membership_AuthToken_Membership_User">
+          <End Type="Models.Membership_User" Role="Membership_User" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Models.Membership_AuthToken" Role="Membership_AuthToken" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Membership_User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Membership_AuthToken">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Membership_MenuItem_Membership_MenuItem">
+          <End Type="Models.Membership_MenuItem" Role="Membership_MenuItem" Multiplicity="0..1" />
+          <End Type="Models.Membership_MenuItem" Role="Membership_MenuItem1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Membership_MenuItem">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Membership_MenuItem1">
+              <PropertyRef Name="ParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Membership_User_Membership_VIPLevel">
+          <End Type="Models.Membership_VIPLevel" Role="Membership_VIPLevel" Multiplicity="0..1" />
+          <End Type="Models.Membership_User" Role="Membership_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Membership_VIPLevel">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Membership_User">
+              <PropertyRef Name="VIPLevelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Membership_UserResetPassword_Membership_User">
+          <End Type="Models.Membership_User" Role="Membership_User" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Models.Membership_UserResetPassword" Role="Membership_UserResetPassword" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Membership_User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Membership_UserResetPassword">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Basic_Logs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="LogLevel" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Message" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="LogTime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Object_AttributeFiled">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="CategoryId" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DataType" Type="Models.DataTypes" Nullable="false" />
+          <Property Name="Visible" Type="Boolean" Nullable="false" />
+          <Property Name="Searchable" Type="Boolean" Nullable="false" />
+          <Property Name="SortOrder" Type="Int32" Nullable="false" />
+          <Property Name="CreatedById" Type="Guid" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedById" Type="Guid" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="DeletedById" Type="Guid" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Object_AttributeValue" Relationship="Models.FK_Object_AttributeValue_Object_AttributeFiled" FromRole="Object_AttributeFiled" ToRole="Object_AttributeValue" />
+          <NavigationProperty Name="Object_AttributeCategory" Relationship="Models.FK_Object_AttributeFiled_Object_AttributeCategory" FromRole="Object_AttributeFiled" ToRole="Object_AttributeCategory" />
+        </EntityType>
+        <EntityType Name="Object_AttributeValue">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="AttributeId" Type="Guid" Nullable="false" />
+          <Property Name="StringValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IntValue" Type="Int32" />
+          <Property Name="FloatValue" Type="Double" />
+          <Property Name="BoolValue" Type="Boolean" />
+          <Property Name="DateTimeValue" Type="DateTime" Precision="3" />
+          <Property Name="Value" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="CreatedById" Type="Guid" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedById" Type="Guid" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="DeletedById" Type="Guid" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Object_AttributeFiled" Relationship="Models.FK_Object_AttributeValue_Object_AttributeFiled" FromRole="Object_AttributeValue" ToRole="Object_AttributeFiled" />
+        </EntityType>
+        <Association Name="FK_Object_AttributeValue_Object_AttributeFiled">
+          <End Type="Models.Object_AttributeFiled" Role="Object_AttributeFiled" Multiplicity="1" />
+          <End Type="Models.Object_AttributeValue" Role="Object_AttributeValue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Object_AttributeFiled">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Object_AttributeValue">
+              <PropertyRef Name="AttributeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EnumType Name="CalTypes" a:ExternalTypeName="Lunz.Data.EDT.CalTypes" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+        <EntityType Name="Object_AttributeArea">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="ObjectId" Type="Guid" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SortOrder" Type="Int32" Nullable="false" />
+          <Property Name="CreatedById" Type="Guid" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedById" Type="Guid" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="DeletedById" Type="Guid" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Object_AttributeCategory" Relationship="Models.FK_Object_AttributeCategory_Object_AttributeArea" FromRole="Object_AttributeArea" ToRole="Object_AttributeCategory" />
+        </EntityType>
+        <EntityType Name="Product_ProductContract">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="TemplateHtml" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="SortOrder" Type="Int32" Nullable="false" />
+          <Property Name="CreatedById" Type="Guid" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedById" Type="Guid" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="DeletedById" Type="Guid" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Object_AttributeCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="AreaId" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SortOrder" Type="Int32" Nullable="false" />
+          <Property Name="CreatedById" Type="Guid" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedById" Type="Guid" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="DeletedById" Type="Guid" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Object_AttributeArea" Relationship="Models.FK_Object_AttributeCategory_Object_AttributeArea" FromRole="Object_AttributeCategory" ToRole="Object_AttributeArea" />
+          <NavigationProperty Name="Object_AttributeFiled" Relationship="Models.FK_Object_AttributeFiled_Object_AttributeCategory" FromRole="Object_AttributeCategory" ToRole="Object_AttributeFiled" />
+        </EntityType>
+        <Association Name="FK_Object_AttributeCategory_Object_AttributeArea">
+          <End Type="Models.Object_AttributeArea" Role="Object_AttributeArea" Multiplicity="1" />
+          <End Type="Models.Object_AttributeCategory" Role="Object_AttributeCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Object_AttributeArea">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Object_AttributeCategory">
+              <PropertyRef Name="AreaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Object_AttributeFiled_Object_AttributeCategory">
+          <End Type="Models.Object_AttributeCategory" Role="Object_AttributeCategory" Multiplicity="1" />
+          <End Type="Models.Object_AttributeFiled" Role="Object_AttributeFiled" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Object_AttributeCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Object_AttributeFiled">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EnumType Name="AnnouncementTypes" a:ExternalTypeName="Lunz.Data.EDT.AnnouncementTypes" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+        <EntityType Name="Basic_Announcement">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="TypeId" Type="Guid" Nullable="false" />
+          <Property Name="Topic" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Text" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="StartDate" Type="DateTime" Precision="3" />
+          <Property Name="EndDate" Type="DateTime" Precision="3" />
+          <Property Name="AttachmentResourceItemId" Type="Guid" />
+          <Property Name="CreatedById" Type="Guid" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedById" Type="Guid" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="DeletedById" Type="Guid" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Basic_ResourceItem" Relationship="Models.FK_Basic_Announcement_Basic_ResourceItem" FromRole="Basic_Announcement" ToRole="Basic_ResourceItem" />
+          <NavigationProperty Name="Basic_DataDictionary" Relationship="Models.FK_Basic_Announcement_Basic_DataDictionary" FromRole="Basic_Announcement" ToRole="Basic_DataDictionary" />
+        </EntityType>
+        <Association Name="FK_Basic_Announcement_Basic_ResourceItem">
+          <End Type="Models.Basic_ResourceItem" Role="Basic_ResourceItem" Multiplicity="0..1" />
+          <End Type="Models.Basic_Announcement" Role="Basic_Announcement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Basic_ResourceItem">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Basic_Announcement">
+              <PropertyRef Name="AttachmentResourceItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Basic_BankInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TypeId" Type="Guid" Nullable="false" />
+          <Property Name="ContactPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Telephone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PostalCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedById" Type="Guid" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedById" Type="Guid" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="DeletedById" Type="Guid" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Basic_DataDictionary" Relationship="Models.FK_Basic_BankInfo_Basic_DataDictionary" FromRole="Basic_BankInfo" ToRole="Basic_DataDictionary" />
+        </EntityType>
+        <EntityType Name="Basic_CompanyInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NameEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Abbreviation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Number" Type="Int32" />
+          <Property Name="TypeCode" Type="Guid" Nullable="false" />
+          <Property Name="TypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BusinessLicense" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BusinessTerm" Type="DateTime" Precision="3" />
+          <Property Name="TaxRegistrationNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Founded" Type="DateTime" Precision="3" />
+          <Property Name="RegistrationCapital" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="BusinessScope" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Telephone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Fax" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PostalCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="OrganizationCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="RegisteredAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Remarks" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="LegalName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LegalIDCard" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LegalTel" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="LegalPostalCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LegalAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="LegalPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="LegaiEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ContactName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ContactIDCard" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ContactTel" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ContactPostalCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ContactAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ContactPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ContactEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SortOrder" Type="Int32" Nullable="false" />
+          <Property Name="CreatedById" Type="Guid" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedById" Type="Guid" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="DeletedById" Type="Guid" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Membership_User" Relationship="Models.FK_Basic_CompanyInfo_Basic_Membership_User" FromRole="Basic_CompanyInfo" ToRole="Membership_User" />
+          <NavigationProperty Name="Basic_DataDictionary" Relationship="Models.FK_Basic_CompanyInfo_Basic_DataDictionary" FromRole="Basic_CompanyInfo" ToRole="Basic_DataDictionary" />
+        </EntityType>
+        <Association Name="FK_Basic_CompanyInfo_Basic_Membership_User">
+          <End Type="Models.Membership_User" Role="Membership_User" Multiplicity="0..1" />
+          <End Type="Models.Basic_CompanyInfo" Role="Basic_CompanyInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Membership_User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Basic_CompanyInfo">
+              <PropertyRef Name="CreatedById" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Product_ProductDefinition">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ProductTypeCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="VehicleTypeCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DownPayment" Type="Double" />
+          <Property Name="DownPaymentStart" Type="Double" />
+          <Property Name="DownPaymentEnd" Type="Double" />
+          <Property Name="DownPaymentEditable" Type="Boolean" Nullable="false" />
+          <Property Name="DownPaymentSumTypeCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Margin" Type="Double" />
+          <Property Name="MarginStart" Type="Double" />
+          <Property Name="MarginEnd" Type="Double" />
+          <Property Name="MarginEditable" Type="Boolean" Nullable="false" />
+          <Property Name="MarginSumTypeCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Fee" Type="Double" />
+          <Property Name="FeeStart" Type="Double" />
+          <Property Name="FeeEnd" Type="Double" />
+          <Property Name="FeeEditable" Type="Boolean" Nullable="false" />
+          <Property Name="FeeSumTypeCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="FeeCalTypeCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="FinalPayment" Type="Double" />
+          <Property Name="FinalPaymentStart" Type="Double" />
+          <Property Name="FinalPaymentEnd" Type="Double" />
+          <Property Name="FinalPaymentEditable" Type="Boolean" Nullable="false" />
+          <Property Name="FinalPaymentSumTypeCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="InterestRate" Type="Double" />
+          <Property Name="InterestRateStart" Type="Double" />
+          <Property Name="InterestRateEnd" Type="Double" />
+          <Property Name="InterestRateEditable" Type="Boolean" Nullable="false" />
+          <Property Name="Lease" Type="Int32" />
+          <Property Name="LeaseStart" Type="Int32" />
+          <Property Name="LeaseEnd" Type="Int32" />
+          <Property Name="LeaseEditable" Type="Boolean" Nullable="false" />
+          <Property Name="LendingTypeCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="MarginDealTypeCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="GpsInstallTypeCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="PurchaseTaxSumTypeCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="InsuranceSumTypeCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ExpirationDate" Type="DateTime" Precision="3" />
+          <Property Name="FinancingVolumeStart" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="FinancingVolumeEnd" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="FinancingVolumeSumTypeCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CalTypeId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="GpsFeeEditable" Type="Boolean" Nullable="false" />
+          <Property Name="SortOrder" Type="Int32" Nullable="false" />
+          <Property Name="CreatedById" Type="Guid" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedById" Type="Guid" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="DeletedById" Type="Guid" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Product_ProductGpsFee" Relationship="Models.FK_Product_ProductGpsFee_Product_ProductDefinition" FromRole="Product_ProductDefinition" ToRole="Product_ProductGpsFee" />
+        </EntityType>
+        <EntityType Name="Product_ProductForm">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedById" Type="Guid" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedById" Type="Guid" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="DeletedById" Type="Guid" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Product_ProductGpsFee">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="ProductId" Type="Guid" Nullable="false" />
+          <Property Name="Year" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="CreatedById" Type="Guid" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedById" Type="Guid" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="DeletedById" Type="Guid" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Product_ProductDefinition" Relationship="Models.FK_Product_ProductGpsFee_Product_ProductDefinition" FromRole="Product_ProductGpsFee" ToRole="Product_ProductDefinition" />
+        </EntityType>
+        <Association Name="FK_Product_ProductGpsFee_Product_ProductDefinition">
+          <End Type="Models.Product_ProductDefinition" Role="Product_ProductDefinition" Multiplicity="1" />
+          <End Type="Models.Product_ProductGpsFee" Role="Product_ProductGpsFee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product_ProductDefinition">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product_ProductGpsFee">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Basic_DataDictionary">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ParentId" Type="Guid" />
+          <Property Name="StringValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IntValue" Type="Int32" />
+          <Property Name="FloatValue" Type="Double" />
+          <Property Name="BoolValue" Type="Boolean" />
+          <Property Name="DateTimeValue" Type="DateTime" Precision="3" />
+          <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="SortOrder" Type="Int32" Nullable="false" />
+          <Property Name="CreatedById" Type="Guid" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedById" Type="Guid" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="DeletedById" Type="Guid" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Basic_Announcement" Relationship="Models.FK_Basic_Announcement_Basic_DataDictionary" FromRole="Basic_DataDictionary" ToRole="Basic_Announcement" />
+          <NavigationProperty Name="Basic_BankInfo" Relationship="Models.FK_Basic_BankInfo_Basic_DataDictionary" FromRole="Basic_DataDictionary" ToRole="Basic_BankInfo" />
+          <NavigationProperty Name="Basic_CompanyInfo" Relationship="Models.FK_Basic_CompanyInfo_Basic_DataDictionary" FromRole="Basic_DataDictionary" ToRole="Basic_CompanyInfo" />
+          <NavigationProperty Name="Basic_DataDictionary1" Relationship="Models.FK_Basic_DataDictionary_Basic_DataDictionary" FromRole="Basic_DataDictionary" ToRole="Basic_DataDictionary1" />
+          <NavigationProperty Name="Basic_DataDictionary2" Relationship="Models.FK_Basic_DataDictionary_Basic_DataDictionary" FromRole="Basic_DataDictionary1" ToRole="Basic_DataDictionary" />
+        </EntityType>
+        <Association Name="FK_Basic_Announcement_Basic_DataDictionary">
+          <End Type="Models.Basic_DataDictionary" Role="Basic_DataDictionary" Multiplicity="1" />
+          <End Type="Models.Basic_Announcement" Role="Basic_Announcement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Basic_DataDictionary">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Basic_Announcement">
+              <PropertyRef Name="TypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Basic_BankInfo_Basic_DataDictionary">
+          <End Type="Models.Basic_DataDictionary" Role="Basic_DataDictionary" Multiplicity="1" />
+          <End Type="Models.Basic_BankInfo" Role="Basic_BankInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Basic_DataDictionary">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Basic_BankInfo">
+              <PropertyRef Name="TypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Basic_CompanyInfo_Basic_DataDictionary">
+          <End Type="Models.Basic_DataDictionary" Role="Basic_DataDictionary" Multiplicity="1" />
+          <End Type="Models.Basic_CompanyInfo" Role="Basic_CompanyInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Basic_DataDictionary">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Basic_CompanyInfo">
+              <PropertyRef Name="TypeCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Basic_DataDictionary_Basic_DataDictionary">
+          <End Type="Models.Basic_DataDictionary" Role="Basic_DataDictionary" Multiplicity="0..1" />
+          <End Type="Models.Basic_DataDictionary" Role="Basic_DataDictionary1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Basic_DataDictionary">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Basic_DataDictionary1">
+              <PropertyRef Name="ParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Basic_ResourceList">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ObjectId" Type="Guid" Nullable="false" />
+          <Property Name="ResourceItemId" Type="Guid" Nullable="false" />
+          <Property Name="CreatedById" Type="Guid" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedById" Type="Guid" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="DeletedById" Type="Guid" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Basic_ResourceItem" Relationship="Models.FK_Basic_ResourceList_Basic_ResourceItem" FromRole="Basic_ResourceList" ToRole="Basic_ResourceItem" />
+        </EntityType>
+        <Association Name="FK_Basic_ResourceList_Basic_ResourceItem">
+          <End Type="Models.Basic_ResourceItem" Role="Basic_ResourceItem" Multiplicity="1" />
+          <End Type="Models.Basic_ResourceList" Role="Basic_ResourceList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Basic_ResourceItem">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Basic_ResourceList">
+              <PropertyRef Name="ResourceItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelsStoreContainer" CdmEntityContainer="EDT_DBEntities">
+          <EntitySetMapping Name="Api_Application">
+            <EntityTypeMapping TypeName="Models.Api_Application">
+              <MappingFragment StoreEntitySet="Api_Application">
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+                <ScalarProperty Name="DeletedById" ColumnName="DeletedById" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+                <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+                <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+                <ScalarProperty Name="Domain" ColumnName="Domain" />
+                <ScalarProperty Name="AppType" ColumnName="AppType" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Api_ApplicationKey">
+            <EntityTypeMapping TypeName="Models.Api_ApplicationKey">
+              <MappingFragment StoreEntitySet="Api_ApplicationKey">
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+                <ScalarProperty Name="DeletedById" ColumnName="DeletedById" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Api_ApplicationLog">
+            <EntityTypeMapping TypeName="Models.Api_ApplicationLog">
+              <MappingFragment StoreEntitySet="Api_ApplicationLog">
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+                <ScalarProperty Name="DeletedById" ColumnName="DeletedById" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+                <ScalarProperty Name="Browser" ColumnName="Browser" />
+                <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+                <ScalarProperty Name="AccessURL" ColumnName="AccessURL" />
+                <ScalarProperty Name="ApplicationKeyId" ColumnName="ApplicationKeyId" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Basic_ResourceItem">
+            <EntityTypeMapping TypeName="Models.Basic_ResourceItem">
+              <MappingFragment StoreEntitySet="Basic_ResourceItem">
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+                <ScalarProperty Name="DeletedById" ColumnName="DeletedById" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+                <ScalarProperty Name="FileLength" ColumnName="FileLength" />
+                <ScalarProperty Name="FileType" ColumnName="FileType" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="Filename" ColumnName="Filename" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Membership_AuthToken">
+            <EntityTypeMapping TypeName="Models.Membership_AuthToken">
+              <MappingFragment StoreEntitySet="Membership_AuthToken">
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+                <ScalarProperty Name="DeletedById" ColumnName="DeletedById" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+                <ScalarProperty Name="Expired" ColumnName="Expired" />
+                <ScalarProperty Name="ApplicationKeyId" ColumnName="ApplicationKeyId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Membership_MenuItem">
+            <EntityTypeMapping TypeName="Models.Membership_MenuItem">
+              <MappingFragment StoreEntitySet="Membership_MenuItem">
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+                <ScalarProperty Name="DeletedById" ColumnName="DeletedById" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="Visible" ColumnName="Visible" />
+                <ScalarProperty Name="IsPermission" ColumnName="IsPermission" />
+                <ScalarProperty Name="Icon" ColumnName="Icon" />
+                <ScalarProperty Name="TargetUrl" ColumnName="TargetUrl" />
+                <ScalarProperty Name="NgUrl" ColumnName="NgUrl" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Membership_User">
+            <EntityTypeMapping TypeName="Models.Membership_User">
+              <MappingFragment StoreEntitySet="Membership_User">
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+                <ScalarProperty Name="DeletedById" ColumnName="DeletedById" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+                <ScalarProperty Name="LatestLoginAt" ColumnName="LatestLoginAt" />
+                <ScalarProperty Name="Approved" ColumnName="Approved" />
+                <ScalarProperty Name="Actived" ColumnName="Actived" />
+                <ScalarProperty Name="VIPLevelId" ColumnName="VIPLevelId" />
+                <ScalarProperty Name="MemberType" ColumnName="MemberType" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Membership_UserResetPassword">
+            <EntityTypeMapping TypeName="Models.Membership_UserResetPassword">
+              <MappingFragment StoreEntitySet="Membership_UserResetPassword">
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+                <ScalarProperty Name="DeletedById" ColumnName="DeletedById" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+                <ScalarProperty Name="Expired" ColumnName="Expired" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Membership_VIPLevel">
+            <EntityTypeMapping TypeName="Models.Membership_VIPLevel">
+              <MappingFragment StoreEntitySet="Membership_VIPLevel">
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+                <ScalarProperty Name="DeletedById" ColumnName="DeletedById" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Basic_Logs">
+            <EntityTypeMapping TypeName="Models.Basic_Logs">
+              <MappingFragment StoreEntitySet="Basic_Logs">
+                <ScalarProperty Name="LogTime" ColumnName="LogTime" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="LogLevel" ColumnName="LogLevel" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Object_AttributeFiled">
+            <EntityTypeMapping TypeName="Models.Object_AttributeFiled">
+              <MappingFragment StoreEntitySet="Object_AttributeFiled">
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+                <ScalarProperty Name="DeletedById" ColumnName="DeletedById" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="Searchable" ColumnName="Searchable" />
+                <ScalarProperty Name="Visible" ColumnName="Visible" />
+                <ScalarProperty Name="DataType" ColumnName="DataType" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Object_AttributeValue">
+            <EntityTypeMapping TypeName="Models.Object_AttributeValue">
+              <MappingFragment StoreEntitySet="Object_AttributeValue">
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+                <ScalarProperty Name="DeletedById" ColumnName="DeletedById" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="DateTimeValue" ColumnName="DateTimeValue" />
+                <ScalarProperty Name="BoolValue" ColumnName="BoolValue" />
+                <ScalarProperty Name="FloatValue" ColumnName="FloatValue" />
+                <ScalarProperty Name="IntValue" ColumnName="IntValue" />
+                <ScalarProperty Name="StringValue" ColumnName="StringValue" />
+                <ScalarProperty Name="AttributeId" ColumnName="AttributeId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Object_AttributeArea">
+            <EntityTypeMapping TypeName="Models.Object_AttributeArea">
+              <MappingFragment StoreEntitySet="Object_AttributeArea">
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+                <ScalarProperty Name="DeletedById" ColumnName="DeletedById" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ObjectId" ColumnName="ObjectId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Product_ProductContract">
+            <EntityTypeMapping TypeName="Models.Product_ProductContract">
+              <MappingFragment StoreEntitySet="Product_ProductContract">
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+                <ScalarProperty Name="DeletedById" ColumnName="DeletedById" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="TemplateHtml" ColumnName="TemplateHtml" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Object_AttributeCategory">
+            <EntityTypeMapping TypeName="Models.Object_AttributeCategory">
+              <MappingFragment StoreEntitySet="Object_AttributeCategory">
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+                <ScalarProperty Name="DeletedById" ColumnName="DeletedById" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Basic_Announcement">
+            <EntityTypeMapping TypeName="Models.Basic_Announcement">
+              <MappingFragment StoreEntitySet="Basic_Announcement">
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+                <ScalarProperty Name="DeletedById" ColumnName="DeletedById" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+                <ScalarProperty Name="AttachmentResourceItemId" ColumnName="AttachmentResourceItemId" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="Topic" ColumnName="Topic" />
+                <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Basic_BankInfo">
+            <EntityTypeMapping TypeName="Models.Basic_BankInfo">
+              <MappingFragment StoreEntitySet="Basic_BankInfo">
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+                <ScalarProperty Name="DeletedById" ColumnName="DeletedById" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+                <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Basic_CompanyInfo">
+            <EntityTypeMapping TypeName="Models.Basic_CompanyInfo">
+              <MappingFragment StoreEntitySet="Basic_CompanyInfo">
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+                <ScalarProperty Name="DeletedById" ColumnName="DeletedById" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="ContactEmail" ColumnName="ContactEmail" />
+                <ScalarProperty Name="ContactPhone" ColumnName="ContactPhone" />
+                <ScalarProperty Name="ContactAddress" ColumnName="ContactAddress" />
+                <ScalarProperty Name="ContactPostalCode" ColumnName="ContactPostalCode" />
+                <ScalarProperty Name="ContactTel" ColumnName="ContactTel" />
+                <ScalarProperty Name="ContactIDCard" ColumnName="ContactIDCard" />
+                <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+                <ScalarProperty Name="LegaiEmail" ColumnName="LegaiEmail" />
+                <ScalarProperty Name="LegalPhone" ColumnName="LegalPhone" />
+                <ScalarProperty Name="LegalAddress" ColumnName="LegalAddress" />
+                <ScalarProperty Name="LegalPostalCode" ColumnName="LegalPostalCode" />
+                <ScalarProperty Name="LegalTel" ColumnName="LegalTel" />
+                <ScalarProperty Name="LegalIDCard" ColumnName="LegalIDCard" />
+                <ScalarProperty Name="LegalName" ColumnName="LegalName" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="CompanyEmail" ColumnName="CompanyEmail" />
+                <ScalarProperty Name="RegisteredAddress" ColumnName="RegisteredAddress" />
+                <ScalarProperty Name="OrganizationCode" ColumnName="OrganizationCode" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="BusinessScope" ColumnName="BusinessScope" />
+                <ScalarProperty Name="RegistrationCapital" ColumnName="RegistrationCapital" />
+                <ScalarProperty Name="Founded" ColumnName="Founded" />
+                <ScalarProperty Name="TaxRegistrationNo" ColumnName="TaxRegistrationNo" />
+                <ScalarProperty Name="BusinessTerm" ColumnName="BusinessTerm" />
+                <ScalarProperty Name="BusinessLicense" ColumnName="BusinessLicense" />
+                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+                <ScalarProperty Name="TypeCode" ColumnName="TypeCode" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Abbreviation" ColumnName="Abbreviation" />
+                <ScalarProperty Name="NameEN" ColumnName="NameEN" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Product_ProductDefinition">
+            <EntityTypeMapping TypeName="Models.Product_ProductDefinition">
+              <MappingFragment StoreEntitySet="Product_ProductDefinition">
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+                <ScalarProperty Name="DeletedById" ColumnName="DeletedById" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="GpsFeeEditable" ColumnName="GpsFeeEditable" />
+                <ScalarProperty Name="CalTypeId" ColumnName="CalTypeId" />
+                <ScalarProperty Name="FinancingVolumeSumTypeCode" ColumnName="FinancingVolumeSumTypeCode" />
+                <ScalarProperty Name="FinancingVolumeEnd" ColumnName="FinancingVolumeEnd" />
+                <ScalarProperty Name="FinancingVolumeStart" ColumnName="FinancingVolumeStart" />
+                <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+                <ScalarProperty Name="InsuranceSumTypeCode" ColumnName="InsuranceSumTypeCode" />
+                <ScalarProperty Name="PurchaseTaxSumTypeCode" ColumnName="PurchaseTaxSumTypeCode" />
+                <ScalarProperty Name="GpsInstallTypeCode" ColumnName="GpsInstallTypeCode" />
+                <ScalarProperty Name="MarginDealTypeCode" ColumnName="MarginDealTypeCode" />
+                <ScalarProperty Name="LendingTypeCode" ColumnName="LendingTypeCode" />
+                <ScalarProperty Name="LeaseEditable" ColumnName="LeaseEditable" />
+                <ScalarProperty Name="LeaseEnd" ColumnName="LeaseEnd" />
+                <ScalarProperty Name="LeaseStart" ColumnName="LeaseStart" />
+                <ScalarProperty Name="Lease" ColumnName="Lease" />
+                <ScalarProperty Name="InterestRateEditable" ColumnName="InterestRateEditable" />
+                <ScalarProperty Name="InterestRateEnd" ColumnName="InterestRateEnd" />
+                <ScalarProperty Name="InterestRateStart" ColumnName="InterestRateStart" />
+                <ScalarProperty Name="InterestRate" ColumnName="InterestRate" />
+                <ScalarProperty Name="FinalPaymentSumTypeCode" ColumnName="FinalPaymentSumTypeCode" />
+                <ScalarProperty Name="FinalPaymentEditable" ColumnName="FinalPaymentEditable" />
+                <ScalarProperty Name="FinalPaymentEnd" ColumnName="FinalPaymentEnd" />
+                <ScalarProperty Name="FinalPaymentStart" ColumnName="FinalPaymentStart" />
+                <ScalarProperty Name="FinalPayment" ColumnName="FinalPayment" />
+                <ScalarProperty Name="FeeCalTypeCode" ColumnName="FeeCalTypeCode" />
+                <ScalarProperty Name="FeeSumTypeCode" ColumnName="FeeSumTypeCode" />
+                <ScalarProperty Name="FeeEditable" ColumnName="FeeEditable" />
+                <ScalarProperty Name="FeeEnd" ColumnName="FeeEnd" />
+                <ScalarProperty Name="FeeStart" ColumnName="FeeStart" />
+                <ScalarProperty Name="Fee" ColumnName="Fee" />
+                <ScalarProperty Name="MarginSumTypeCode" ColumnName="MarginSumTypeCode" />
+                <ScalarProperty Name="MarginEditable" ColumnName="MarginEditable" />
+                <ScalarProperty Name="MarginEnd" ColumnName="MarginEnd" />
+                <ScalarProperty Name="MarginStart" ColumnName="MarginStart" />
+                <ScalarProperty Name="Margin" ColumnName="Margin" />
+                <ScalarProperty Name="DownPaymentSumTypeCode" ColumnName="DownPaymentSumTypeCode" />
+                <ScalarProperty Name="DownPaymentEditable" ColumnName="DownPaymentEditable" />
+                <ScalarProperty Name="DownPaymentEnd" ColumnName="DownPaymentEnd" />
+                <ScalarProperty Name="DownPaymentStart" ColumnName="DownPaymentStart" />
+                <ScalarProperty Name="DownPayment" ColumnName="DownPayment" />
+                <ScalarProperty Name="VehicleTypeCode" ColumnName="VehicleTypeCode" />
+                <ScalarProperty Name="ProductTypeCode" ColumnName="ProductTypeCode" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Product_ProductForm">
+            <EntityTypeMapping TypeName="Models.Product_ProductForm">
+              <MappingFragment StoreEntitySet="Product_ProductForm">
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+                <ScalarProperty Name="DeletedById" ColumnName="DeletedById" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Product_ProductGpsFee">
+            <EntityTypeMapping TypeName="Models.Product_ProductGpsFee">
+              <MappingFragment StoreEntitySet="Product_ProductGpsFee">
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+                <ScalarProperty Name="DeletedById" ColumnName="DeletedById" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Basic_DataDictionary">
+            <EntityTypeMapping TypeName="Models.Basic_DataDictionary">
+              <MappingFragment StoreEntitySet="Basic_DataDictionary">
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+                <ScalarProperty Name="DeletedById" ColumnName="DeletedById" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="DateTimeValue" ColumnName="DateTimeValue" />
+                <ScalarProperty Name="BoolValue" ColumnName="BoolValue" />
+                <ScalarProperty Name="FloatValue" ColumnName="FloatValue" />
+                <ScalarProperty Name="IntValue" ColumnName="IntValue" />
+                <ScalarProperty Name="StringValue" ColumnName="StringValue" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Basic_ResourceList">
+            <EntityTypeMapping TypeName="Models.Basic_ResourceList">
+              <MappingFragment StoreEntitySet="Basic_ResourceList">
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+                <ScalarProperty Name="DeletedById" ColumnName="DeletedById" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+                <ScalarProperty Name="ResourceItemId" ColumnName="ResourceItemId" />
+                <ScalarProperty Name="ObjectId" ColumnName="ObjectId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

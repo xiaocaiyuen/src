@@ -1,0 +1,15 @@
+﻿div.modal[modal-window] {
+    z-index: 12000 !important;
+}
+
+.table.table-striped.table-bordered tr.filter td {
+    border-bottom-width: 0;
+}
+.table .btn-group .btn{
+    margin-right:0;
+}
+
+.table > tbody > tr.active > td,
+.table > tbody > tr.active > td .btn-link{
+    color:#fff;
+}

@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{11ACB4F9-A0AA-4D9C-9C32-B6FF1C69B124}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Lunz.Data.EDT</RootNamespace>
+    <AssemblyName>Lunz.Data.EDT</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Lunz.Data.EDT.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Lunz.Data, Version=0.0.1.4, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Lunz.Data.0.0.1.04\lib\net451\Lunz.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Lunz.Web, Version=0.0.1.21, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Lunz.Web.0.0.1.21\lib\net451\Lunz.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Api_Application.cs">
+      <DependentUpon>EDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Api_ApplicationKey.cs">
+      <DependentUpon>EDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Api_ApplicationLog.cs">
+      <DependentUpon>EDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Basic_Announcement.cs">
+      <DependentUpon>EDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Basic_BankInfo.cs">
+      <DependentUpon>EDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Basic_CompanyInfo.cs">
+      <DependentUpon>EDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Basic_DataDictionary.cs">
+      <DependentUpon>EDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Basic_Logs.cs">
+      <DependentUpon>EDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Basic_ResourceList.cs">
+      <DependentUpon>EDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDT.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EDT.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDT.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Enums\AppTypes.cs" />
+    <Compile Include="Basic_ResourceItem.cs">
+      <DependentUpon>EDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Enums\CalTypes.cs" />
+    <Compile Include="Membership_AuthToken.cs">
+      <DependentUpon>EDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Membership_UserResetPassword.cs">
+      <DependentUpon>EDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Membership_VIPLevel.cs">
+      <DependentUpon>EDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Enums\DataTypes.cs" />
+    <Compile Include="Entities.cs" />
+    <Compile Include="Membership_MenuItem.cs">
+      <DependentUpon>EDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Membership_User.cs">
+      <DependentUpon>EDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Object_AttributeArea.cs">
+      <DependentUpon>EDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Object_AttributeCategory.cs">
+      <DependentUpon>EDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Object_AttributeFiled.cs">
+      <DependentUpon>EDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Object_AttributeValue.cs">
+      <DependentUpon>EDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Partial_Object_AttributeValue.cs" />
+    <Compile Include="Product_ProductContract.cs">
+      <DependentUpon>EDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product_ProductDefinition.cs">
+      <DependentUpon>EDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product_ProductForm.cs">
+      <DependentUpon>EDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product_ProductGpsFee.cs">
+      <DependentUpon>EDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="EDT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EDT.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EDT_DBEntities.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="EDT.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EDT.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EDT.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EDT.Context.cs</LastGenOutput>
+      <DependentUpon>EDT.edmx</DependentUpon>
+    </None>
+    <None Include="EDT.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EDT.cs</LastGenOutput>
+      <DependentUpon>EDT.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="EDT.edmx.diagram">
+      <DependentUpon>EDT.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

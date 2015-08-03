@@ -1,0 +1,407 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title">编辑公司信息设置</h3>
+</div>
+<form name="editForm" action="" class="horizontal-form">
+    <div class="modal-body">
+        <div class="form-body">
+
+            <div class="portlet box green ">
+                <div class="portlet-title">
+                    <div class="caption">
+                        公司基本信息
+                    </div>
+                    <div class="tools">
+                        <a href="" class="collapse">
+                        </a>
+                    </div>
+                </div>
+                <div class="portlet-body form">
+                    <div class="form-body">
+                        <div class="form-group"
+                             data-ng-class="{'has-error': editForm.Name.$dirty && editForm.Name.$error.required}">
+                            <label class="control-label">中文名称 <span class="required">*</span></label>
+                            <input type="text" name="Name" data-ng-model="CompanyInfo.Name"
+                                   required maxlength="50" class="form-control" placeholder="" />
+                            <span class="help-block"
+                                  data-ng-show="editForm.Name.$dirty && editForm.Name.$error.required">
+                                此字段为必填。
+                            </span>
+                        </div>
+                        <div class="form-group"
+                             data-ng-class="{'has-error': editForm.NameEN.$dirty && editForm.NameEN.$error.required}">
+                            <label class="control-label">英文名称 <span class="required">*</span></label>
+                            <input type="text" name="NameEN" data-ng-model="CompanyInfo.NameEN"
+                                   required maxlength="50" class="form-control" placeholder="" />
+                            <span class="help-block"
+                                  data-ng-show="editForm.NameEN.$dirty && editForm.NameEN.$error.required">
+                                此字段为必填。
+                            </span>
+                        </div>
+                        <div class="form-group"
+                             data-ng-class="{'has-error': editForm.Abbreviation.$dirty && editForm.Abbreviation.$error.required}">
+                            <label class="control-label">简称 <span class="required">*</span></label>
+                            <input type="text" name="Abbreviation" data-ng-model="CompanyInfo.Abbreviation"
+                                   required maxlength="50" class="form-control" placeholder="" />
+                            <span class="help-block"
+                                  data-ng-show="editForm.Abbreviation.$dirty && editForm.Abbreviation.$error.required">
+                                此字段为必填。
+                            </span>
+                        </div>
+                        <div class="form-group"
+                             data-ng-class="{'has-error': editForm.Number.$dirty && editForm.Number.$error.required}">
+                            <label class="control-label">职工人数 <span class="required">*</span></label>
+                            <input type="number" name="Number" data-ng-model="CompanyInfo.Number"
+                                   required min="0" class="form-control" placeholder="" />
+                            <span class="help-block"
+                                  data-ng-show="editForm.Number.$dirty && editForm.Number.$error.required">
+                                此字段为必填。
+                            </span>
+                        </div>
+                        <div class="form-group"
+                             data-ng-class="{'has-error': editForm.TypeCode.$dirty && editForm.TypeCode.$error.required}">
+                            <label class="control-label">公司类型 <span class="required">*</span></label>
+                            <select class="option form-control input-sm" ng-model="CompanyInfo.TypeCode" ng-options="m.Id as m.Name for m in DataDictionary">
+                                <option value="">-- 请选择 --</option>
+                            </select>
+                            <span class="help-block"
+                                  data-ng-show="editForm.TypeCode.$dirty && editForm.TypeCode.$error.required">
+                                此字段为必填。
+                            </span>
+                        </div>
+                        <div class="form-group"
+                             data-ng-class="{'has-error': editForm.BusinessLicense.$dirty && editForm.BusinessLicense.$error.required}">
+                            <label class="control-label">营业执照注册码 <span class="required">*</span></label>
+                            <input type="text" name="BusinessLicense" data-ng-model="CompanyInfo.BusinessLicense"
+                                   required maxlength="50" class="form-control" placeholder="" />
+                            <span class="help-block"
+                                  data-ng-show="editForm.BusinessLicense.$dirty && editForm.BusinessLicense.$error.required">
+                                此字段为必填。
+                            </span>
+                        </div>
+                        <div class="form-group"
+                             data-ng-class="{'has-error': editForm.BusinessTerm.$dirty && editForm.BusinessTerm.$error.required}">
+                            <label class="control-label">营业期限 <span class="required">*</span></label>
+                            <input type="text" name="BusinessTerm" datepicker-popup="yyyy-MM-dd" close-text="Close"     data-ng-model="CompanyInfo.BusinessTerm" required class="form-control" />
+                            @*<span class="input-group-btn">
+                                <button type="button" class="btn btn-default" ng-click="open2($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                            </span>*@
+                            <span class="help-block"
+                                  data-ng-show="editForm.BusinessTerm.$dirty && editForm.BusinessTerm.$error.required">
+                                此字段为必填。
+                            </span>
+                        </div>
+                        <div class="form-group"
+                             data-ng-class="{'has-error': editForm.TaxRegistrationNo.$dirty && editForm.TaxRegistrationNo.$error.required}">
+                            <label class="control-label">税务登记号 <span class="required">*</span></label>
+                            <input type="text" name="TaxRegistrationNo" data-ng-model="CompanyInfo.TaxRegistrationNo"
+                                   required maxlength="50" class="form-control" placeholder="" />
+                            <span class="help-block"
+                                  data-ng-show="editForm.TaxRegistrationNo.$dirty && editForm.TaxRegistrationNo.$error.required">
+                                此字段为必填。
+                            </span>
+                        </div>
+                        <div class="form-group"
+                             data-ng-class="{'has-error': editForm.Founded.$dirty && editForm.Founded.$error.required}">
+                            <label class="control-label">成立日期 <span class="required">*</span></label>
+                            <input type="text" name="Founded" data-ng-model="CompanyInfo.Founded"
+                                   required datepicker-popup="yyyy-MM-dd" class="form-control" />
+                            <span class="help-block"
+                                  data-ng-show="editForm.Founded.$dirty && editForm.Founded.$error.required">
+                                此字段为必填。
+                            </span>
+                        </div>
+                        <div class="form-group"
+                             data-ng-class="{'has-error': editForm.RegistrationCapital.$dirty && editForm.RegistrationCapital.$error.required}">
+                            <label class="control-label">注册资本 <span class="required">*</span></label>
+                            <input type="number" name="RegistrationCapital" data-ng-model="CompanyInfo.RegistrationCapital"
+                                   required min="0" class="form-control" placeholder="" />
+                            <span class="help-block"
+                                  data-ng-show="editForm.RegistrationCapital.$dirty && editForm.RegistrationCapital.$error.required">
+                                此字段为必填。
+                            </span>
+                        </div>
+                        <div class="form-group"
+                             data-ng-class="{'has-error': editForm.BusinessScope.$dirty && editForm.BusinessScope.$error.required}">
+                            <label class="control-label">经营范围 <span class="required">*</span></label>
+                            <input type="text" name="BusinessScope" data-ng-model="CompanyInfo.BusinessScope"
+                                   required maxlength="50" class="form-control" placeholder="" />
+                            <span class="help-block"
+                                  data-ng-show="editForm.BusinessScope.$dirty && editForm.BusinessScope.$error.required">
+                                此字段为必填。
+                            </span>
+                        </div>
+                        <div class="form-group"
+                             data-ng-class="{'has-error': editForm.Telephone.$dirty && editForm.Telephone.$invalid}">
+                            <label class="control-label">公司电话 <span class="required">*</span></label>
+                            <input type="text" name="Telephone" data-ng-model="CompanyInfo.Telephone"
+                                   required maxlength="50" class="form-control" ng-pattern="/^((0\d{2,3})-)?(\d{7,8})(-(\d{3,}))?$/" />
+                            <span class="help-block"
+                                  data-ng-show="editForm.Telephone.$dirty && editForm.Telephone.$invalid">
+                                此字段为必填或格式不对。
+                            </span>
+                        </div>
+                        <div class="form-group"
+                             data-ng-class="{'has-error': editForm.Address.$dirty && editForm.Address.$error.required}">
+                            <label class="control-label">公司地址 <span class="required">*</span></label>
+                            <input type="text" name="Address" data-ng-model="CompanyInfo.Address"
+                                   maxlength="200" class="form-control" placeholder="" />
+                            <span class="help-block"
+                                  data-ng-show="editForm.Address.$dirty && editForm.Address.$error.required">
+                                此字段为必填。
+                            </span>
+                        </div>
+                        <div class="form-group"
+                             data-ng-class="{'has-error': editForm.Fax.$dirty && editForm.Fax.$error.required}">
+                            <label class="control-label">公司传真 <span class="required">*</span></label>
+                            <input type="text" name="Fax" data-ng-model="CompanyInfo.Fax"
+                                   required maxlength="50" class="form-control" placeholder="" />
+                            <span class="help-block"
+                                  data-ng-show="editForm.Fax.$dirty && editForm.Fax.$error.required">
+                                此字段为必填。
+                            </span>
+                        </div>
+                        <div class="form-group"
+                             data-ng-class="{'has-error': editForm.PostalCode.$dirty && editForm.PostalCode.$invalid}">
+                            <label class="control-label">邮政编码 <span class="required">*</span></label>
+                            <input type="text" name="PostalCode" data-ng-model="CompanyInfo.PostalCode"
+                                   required maxlength="50" class="form-control" ng-pattern="/^[1-9][0-9]{5}$/" />
+                            <span class="help-block"
+                                  data-ng-show="editForm.PostalCode.$dirty && editForm.PostalCode.$invalid">
+                                此字段为必填或格式不对。
+                            </span>
+                        </div>
+                        <div class="form-group"
+                             data-ng-class="{'has-error': editForm.OrganizationCode.$dirty && editForm.OrganizationCode.$error.required}">
+                            <label class="control-label">组织机构代码 <span class="required">*</span></label>
+                            <input type="text" name="OrganizationCode" data-ng-model="CompanyInfo.OrganizationCode"
+                                   required maxlength="50" class="form-control" placeholder="" />
+                            <span class="help-block"
+                                  data-ng-show="editForm.OrganizationCode.$dirty && editForm.OrganizationCode.$error.required">
+                                此字段为必填。
+                            </span>
+                        </div>
+                        <div class="form-group"
+                             data-ng-class="{'has-error': editForm.RegisteredAddress.$dirty && editForm.RegisteredAddress.$error.required}">
+                            <label class="control-label">公司注册地址 <span class="required">*</span></label>
+                            <input type="text" name="RegisteredAddress" data-ng-model="CompanyInfo.RegisteredAddress"
+                                   required maxlength="200" class="form-control" placeholder="" />
+                            <span class="help-block"
+                                  data-ng-show="editForm.RegisteredAddress.$dirty && editForm.RegisteredAddress.$error.required">
+                                此字段为必填。
+                            </span>
+                        </div>
+                        <div class="form-group"
+                             data-ng-class="{'has-error': editForm.CompanyEmail.$dirty && editForm.CompanyEmail.$invalid}">
+                            <label class="control-label">企业邮箱 <span class="required">*</span></label>
+
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-envelope"></i>
+                                </span>
+                                <input type="email" name="CompanyEmail" data-ng-model="CompanyInfo.CompanyEmail"
+                                       required class="form-control" />
+                            </div>
+
+                            <span class="help-block"
+                                  data-ng-show="editForm.CompanyEmail.$dirty && editForm.CompanyEmail.$invalid">
+                                此字段为必填或格式不对。
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">备注</label>
+                            <textarea class="form-control" name="Remarks" data-ng-model="CompanyInfo.Remarks" rows="3"></textarea>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="portlet box green ">
+                <div class="portlet-title">
+                    <div class="caption">
+                        法人代表
+                    </div>
+                    <div class="tools">
+                        <a href="" class="collapse">
+                        </a>
+                    </div>
+                </div>
+                <div class="portlet-body form">
+                    <div class="form-body">
+                        <div class="form-group"
+                             data-ng-class="{'has-error': editForm.LegalName.$dirty && editForm.LegalName.$error.required}">
+                            <label class="control-label">姓名 <span class="required">*</span></label>
+                            <input type="text" name="LegalName" data-ng-model="CompanyInfo.LegalName"
+                                   required maxlength="50" class="form-control" placeholder="" />
+                            <span class="help-block"
+                                  data-ng-show="editForm.LegalName.$dirty && editForm.LegalName.$error.required">
+                                此字段为必填。
+                            </span>
+                        </div>
+                        <div class="form-group"
+                             data-ng-class="{'has-error': editForm.LegalIDCard.$dirty && editForm.LegalIDCard.$invalid}">
+                            <label class="control-label">身份证 <span class="required">*</span></label>
+                            <input type="text" name="LegalIDCard" data-ng-model="CompanyInfo.LegalIDCard"
+                                   required maxlength="50" class="form-control" ng-pattern="/^(\d{18}|\d{15}|\d{17}[xX])$/" />
+                            <span class="help-block"
+                                  data-ng-show="editForm.LegalIDCard.$dirty && editForm.LegalIDCard.$invalid">
+                                此字段为必填或格式不对。
+                            </span>
+                        </div>
+                        <div class="form-group"
+                             data-ng-class="{'has-error': editForm.LegalTel.$dirty && editForm.LegalTel.$invalid}">
+                            <label class="control-label">办公电话 <span class="required">*</span></label>
+                            <input type="text" name="LegalTel" data-ng-model="CompanyInfo.LegalTel"
+                                   required maxlength="50" class="form-control" ng-pattern="/^((0\d{2,3})-)?(\d{7,8})(-(\d{3,}))?$/" />
+                            <span class="help-block"
+                                  data-ng-show="editForm.LegalTel.$dirty && editForm.LegalTel.$invalid">
+                                此字段为必填或格式不对。
+                            </span>
+                        </div>
+                        <div class="form-group"
+                             data-ng-class="{'has-error': editForm.LegalPostalCode.$dirty && editForm.LegalPostalCode.$invalid}">
+                            <label class="control-label">邮政编码 <span class="required">*</span></label>
+                            <input type="text" name="LegalPostalCode" data-ng-model="CompanyInfo.LegalPostalCode"
+                                   required maxlength="50" class="form-control" ng-pattern="/^[1-9][0-9]{5}$/" />
+                            <span class="help-block"
+                                  data-ng-show="editForm.LegalPostalCode.$dirty && editForm.LegalPostalCode.$invalid">
+                                此字段为必填或格式不对。
+                            </span>
+                        </div>
+                        <div class="form-group"
+                             data-ng-class="{'has-error': editForm.LegalAddress.$dirty && editForm.LegalAddress.$error.required}">
+                            <label class="control-label">常驻地 <span class="required">*</span></label>
+                            <input type="text" name="LegalAddress" data-ng-model="CompanyInfo.LegalAddress"
+                                   required maxlength="200" class="form-control" placeholder="" />
+                            <span class="help-block"
+                                  data-ng-show="editForm.LegalAddress.$dirty && editForm.LegalAddress.$error.required">
+                                此字段为必填。
+                            </span>
+                        </div>
+                        <div class="form-group"
+                             data-ng-class="{'has-error': editForm.LegalPhone.$dirty && editForm.LegalPhone.$invalid}">
+                            <label class="control-label">手机号码 <span class="required">*</span></label>
+                            <input type="text" name="LegalPhone" data-ng-model="CompanyInfo.LegalPhone"
+                                   required maxlength="50" class="form-control" ng-pattern="/(^0?[1][358][0-9]{9}$)/" />
+                            <span class="help-block"
+                                  data-ng-show="editForm.LegalPhone.$dirty && editForm.LegalPhone.$invalid">
+                                此字段为必填或格式不对。
+                            </span>
+                        </div>
+                        <div class="form-group"
+                             data-ng-class="{'has-error': editForm.LegaiEmail.$dirty && editForm.LegaiEmail.$invalid}">
+                            <label class="control-label">邮箱 <span class="required">*</span></label>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-envelope"></i>
+                                </span>
+                                <input type="email" name="LegaiEmail" data-ng-model="CompanyInfo.LegaiEmail"
+                                       required maxlength="50" class="form-control" />
+                            </div>
+                            <span class="help-block"
+                                  data-ng-show="editForm.LegaiEmail.$dirty && editForm.LegaiEmail.$invalid">
+                                此字段为必填。
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portlet box green ">
+                <div class="portlet-title">
+                    <div class="caption">
+                        联系人
+                    </div>
+                    <div class="tools">
+                        <a href="" class="collapse">
+                        </a>
+                    </div>
+                </div>
+                <div class="portlet-body form">
+                    <div class="form-body">
+                        <div class="form-group"
+                             data-ng-class="{'has-error': editForm.ContactName.$dirty && editForm.ContactName.$error.required}">
+                            <label class="control-label">姓名 <span class="required">*</span></label>
+                            <input type="text" name="ContactName" data-ng-model="CompanyInfo.ContactName"
+                                   required maxlength="50" class="form-control" placeholder="" />
+                            <span class="help-block"
+                                  data-ng-show="editForm.ContactName.$dirty && editForm.ContactName.$error.required">
+                                此字段为必填。
+                            </span>
+                        </div>
+                        <div class="form-group"
+                             data-ng-class="{'has-error': editForm.ContactIDCard.$dirty && editForm.ContactIDCard.$invalid}">
+                            <label class="control-label">身份证 <span class="required">*</span></label>
+                            <input type="text" name="ContactIDCard" data-ng-model="CompanyInfo.ContactIDCard"
+                                   required maxlength="50" class="form-control" ng-pattern="/^(\d{18}|\d{15}|\d{17}[xX])$/" />
+                            <span class="help-block"
+                                  data-ng-show="editForm.ContactIDCard.$dirty && editForm.ContactIDCard.$invalid">
+                                此字段为必填。
+                            </span>
+                        </div>
+                        <div class="form-group"
+                             data-ng-class="{'has-error': editForm.ContactTel.$dirty && editForm.ContactTel.$error.required}">
+                            <label class="control-label">办公电话 <span class="required">*</span></label>
+                            <input type="text" name="ContactTel" data-ng-model="CompanyInfo.ContactTel"
+                                   required maxlength="50" class="form-control" placeholder="" />
+                            <span class="help-block"
+                                  data-ng-show="editForm.ContactTel.$dirty && editForm.ContactTel.$error.required">
+                                此字段为必填。
+                            </span>
+                        </div>
+                        <div class="form-group"
+                             data-ng-class="{'has-error': editForm.ContactPostalCode.$dirty && editForm.ContactPostalCode.$invalid}">
+                            <label class="control-label">邮政编码 <span class="required">*</span></label>
+                            <input type="text" name="ContactPostalCode" data-ng-model="CompanyInfo.ContactPostalCode"
+                                   required maxlength="50" class="form-control" ng-pattern="/^[1-9][0-9]{5}$/" />
+                            <span class="help-block"
+                                  data-ng-show="editForm.ContactPostalCode.$dirty && editForm.ContactPostalCode.$invalid">
+                                此字段为必填或格式不对。
+                            </span>
+                        </div>
+                        <div class="form-group"
+                             data-ng-class="{'has-error': editForm.ContactAddress.$dirty && editForm.ContactAddress.$error.required}">
+                            <label class="control-label">常驻地 <span class="required">*</span></label>
+                            <input type="text" name="ContactAddress" data-ng-model="CompanyInfo.ContactAddress"
+                                   required maxlength="50" class="form-control" placeholder="" />
+                            <span class="help-block"
+                                  data-ng-show="editForm.ContactAddress.$dirty && editForm.ContactAddress.$error.required">
+                                此字段为必填。
+                            </span>
+                        </div>
+                        <div class="form-group"
+                             data-ng-class="{'has-error': editForm.ContactPhone.$dirty && editForm.ContactPhone.$invalid}">
+                            <label class="control-label">手机号码 <span class="required">*</span></label>
+                            <input type="text" name="ContactPhone" data-ng-model="CompanyInfo.ContactPhone"
+                                   required maxlength="50" class="form-control" ng-pattern="/(^0?[1][358][0-9]{9}$)/" />
+                            <span class="help-block"
+                                  data-ng-show="editForm.ContactPhone.$dirty && editForm.ContactPhone.$invalid">
+                                此字段为必填或格式不对。
+                            </span>
+                        </div>
+                        <div class="form-group"
+                             data-ng-class="{'has-error': editForm.ContactEmail.$dirty && editForm.ContactEmail.$invalid}">
+                            <label class="control-label">邮箱 <span class="required">*</span></label>
+
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-envelope"></i>
+                                </span>
+                                <input type="email" name="ContactEmail" data-ng-model="CompanyInfo.ContactEmail"
+                                       required maxlength="50" class="form-control" />
+                            </div>
+                            <span class="help-block"
+                                  data-ng-show="editForm.ContactEmail.$dirty && editForm.ContactEmail.$invalid">
+                                此字段为必填或格式不对。
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-disabled="editForm.$invalid" ng-click="save()">保存</button>
+        <button class="btn btn-warning" ng-click="cancel()">取消</button>
+    </div>
+</form>
